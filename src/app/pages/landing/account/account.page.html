@@ -1,0 +1,105 @@
+<ion-content>
+
+  <h2 class="ion-text-center">Perfil</h2>
+
+  <p class="ion-text-center">
+    <img src="assets/credit-card.png" alt="" style="width: 50%;">
+  </p>
+
+  <ion-item>
+    <ion-label>País de Origen</ion-label>
+    <ion-select [(ngModel)]="country">
+      <ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nacionalidad</ion-label>
+    <ion-input type="text" [(ngModel)]="nationality"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo de Documento</ion-label>
+    <ion-select [(ngModel)]="documentType">
+      <ion-select-option value="dni" >Documento de Identidad Nacional</ion-select-option>
+      <ion-select-option value="passport" >Pasaporte</ion-select-option>
+      <ion-select-option value="driver_license" >Licencia de conducir</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Género</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-select-option value="F" >Femenino</ion-select-option>
+      <ion-select-option value="M" >Masculino</ion-select-option>
+      <ion-select-option value="Unknown" >N/A</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Número de Documento</ion-label>
+    <ion-input type="text" [(ngModel)]="documentNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Número de Validación</ion-label>
+    <ion-input type="number" [(ngModel)]="validationNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha de Emisión</ion-label>
+    <ion-datetime [(ngModel)]="createdDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fecha de Expiración</ion-label>
+    <ion-datetime [(ngModel)]="dueDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fecha de Nacimiento</ion-label>
+    <ion-datetime [(ngModel)]="birthDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Primer Nombre</ion-label>
+    <ion-input type="name" [(ngModel)]="firstName"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Segundo Nombre</ion-label>
+    <ion-input type="name" [(ngModel)]="middleName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Primer Apellido</ion-label>
+    <ion-input type="name" [(ngModel)]="firstLastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Segundo Apellido</ion-label>
+    <ion-input type="name" [(ngModel)]="secondLastname"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <p>Imagen documento de identidad - Frente</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="success">Subir imagen</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <p>Imagen documento de identidad - Reverso</p>
+    <input type="file" style="display: none;" id="front-identity">
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="success" (click)="uploadFront()">Subir imagen</ion-button>
+  </ion-item>
+
+
+    <ion-button expand="full">Verificar</ion-button>
+
+
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-content>
+
+  <div id="bg-gradient" *ngIf="user != null">
+    <div class="card-padding">
+
+      <ion-card *ngIf="user.account_verified_at == null">
+        <ion-card-content>
+          
+          <h3 class="ion-text-center bold" >Hola {{ user.name ? '': user.email }}</h3>
+          
+          <p class="ion-text-center">Aún no validas tu cuenta</p>
+
+          <p class="ion-text-center">
+            <ion-button (click)="goToAccount()">Validar</ion-button>
+          </p>
+        
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card *ngIf="user.account_verified_at !== null">
+        <ion-card-content>
+          
+          <h3 class="ion-text-center bold" >Hola {{ user.name ? '': user.email }}</h3>
+        
+
+          <div style="position: relative; height: 80px;">
+            <ion-fab horizontal="center">
+              <ion-fab-button>
+                  <ion-icon name="add-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+          </div>
+        
+        </ion-card-content>
+      </ion-card>
+
+
+    </div>  
+  </div>
+
+
+  <div class="card-padding">
+    <p class="ion-text-center">
+      <img src="assets/img1.png" alt="" style="width: 40%; margin-top: 30px;" />
+    </p>
+    <h2 class="bold ion-text-center fnt-16">This is where all your activities live</h2>
+    <p class="ion-text-center fnt-12">When you start using Transferwise, everything you send, spend, and receive will show up here</p>
+  </div>
+
+</ion-content>

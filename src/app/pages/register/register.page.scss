@@ -1,0 +1,41 @@
+ion-grid{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span{
+    color:#3dc2ff;
+}
+
+.my-custom-class {
+    color: green;
+}
+
+ion-label{
+    --color: #fff !important;
+    color:#fff !important;
+}
+
+h2{
+    color: #fff;
+}
+
+ion-input{
+    color: #fff;
+}
+
+p{
+    font-size: 10px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+ion-content{
+    --ion-background-color: #22b573;
+}
+
+ion-header{
+    --ion-background-color: #22b573;
+}
