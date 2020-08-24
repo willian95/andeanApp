@@ -1,14 +1,14 @@
 <ion-content>
 
-  <h2 class="ion-text-center">Perfil</h2>
+  <h2 class="ion-text-center">Identidad</h2>
 
   <p class="ion-text-center">
-    <img src="assets/credit-card.png" alt="" style="width: 50%;">
+    <img src="assets/undraw_Credit_card_re_blml.png" alt="" style="width: 50%;">
   </p>
 
   <ion-item>
     <ion-label>País de Origen</ion-label>
-    <ion-select [(ngModel)]="country">
+    <ion-select [(ngModel)]="country" cancelText="Cancelar">
       <ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
     </ion-select>
   </ion-item>
@@ -20,8 +20,8 @@
 
   <ion-item>
     <ion-label>Tipo de Documento</ion-label>
-    <ion-select [(ngModel)]="documentType">
-      <ion-select-option value="dni" >Documento de Identidad Nacional</ion-select-option>
+    <ion-select [(ngModel)]="documentType" cancelText="Cancelar">
+      <ion-select-option value="dni" >DNI</ion-select-option>
       <ion-select-option value="passport" >Pasaporte</ion-select-option>
       <ion-select-option value="driver_license" >Licencia de conducir</ion-select-option>
     </ion-select>
@@ -29,7 +29,7 @@
 
   <ion-item>
     <ion-label>Género</ion-label>
-    <ion-select [(ngModel)]="gender">
+    <ion-select [(ngModel)]="gender" cancelText="Cancelar">
       <ion-select-option value="F" >Femenino</ion-select-option>
       <ion-select-option value="M" >Masculino</ion-select-option>
       <ion-select-option value="Unknown" >N/A</ion-select-option>
@@ -48,17 +48,17 @@
 
   <ion-item>
     <ion-label>Fecha de Emisión</ion-label>
-    <ion-datetime [(ngModel)]="createdDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+    <ion-datetime [(ngModel)]="createdDate" value="" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Fecha de Expiración</ion-label>
-    <ion-datetime [(ngModel)]="dueDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+    <ion-label>Fecha de Expiración</ion-label>
+    <ion-datetime [(ngModel)]="dueDate" value="" max="2060-12-31" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Fecha de Nacimiento</ion-label>
-    <ion-datetime [(ngModel)]="birthDate" value="" displayFormat="DD MM YYYY"></ion-datetime>
+    <ion-label>Fecha de Nacimiento</ion-label>
+    <ion-datetime [(ngModel)]="birthDate" value="" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
   </ion-item>
 
   <ion-item>
@@ -83,23 +83,28 @@
   
   <ion-item>
     <p>Imagen documento de identidad - Frente</p>
+    <input type="file" name="file" id="image-front" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'front')"/>
+    <ion-button color="success" (click)="presentActionSheet('front')">Subir imagen</ion-button>
   </ion-item>
 
-  <ion-item>
-    <ion-button color="success">Subir imagen</ion-button>
-  </ion-item>
+  <!--<ion-item>
+    <input type="file" name="file" id="image-front" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'front')"/>
+    <ion-button color="success" (click)="presentActionSheet('front')">Subir imagen</ion-button>
+  </ion-item>-->
 
-  <ion-item>
+  <ion-item *ngIf="documentType == 'dni' || documentType == 'driver_license'">
     <p>Imagen documento de identidad - Reverso</p>
-    <input type="file" style="display: none;" id="front-identity">
+    <input type="file" name="file" id="image-rear" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'rear')"/>
+    <ion-button color="success" (click)="presentActionSheet('rear')">Subir imagen</ion-button>
   </ion-item>
 
-  <ion-item>
-    <ion-button color="success" (click)="uploadFront()">Subir imagen</ion-button>
-  </ion-item>
+  <!--<ion-item *ngIf="documentType == 'dni' || documentType == 'driver_license'">
+    <input type="file" name="file" id="image-rear" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'rear')"/>
+    <ion-button color="success" (click)="presentActionSheet('rear')">Subir imagen</ion-button>
+  </ion-item>-->
 
 
-    <ion-button expand="full">Verificar</ion-button>
+    <ion-button expand="full" style="margin-top: 15px;" (click)="verify()">Verificar</ion-button>
 
 
 </ion-content>

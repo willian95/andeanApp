@@ -19,38 +19,19 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
-  /*{
-    path: 'dashboard',
-    loadChildren: () => import('./pages/landing/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },*/
   {
     path: 'tabs',
     loadChildren: () => import('./pages/landing/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'activity',
-    loadChildren: () => import('./pages/landing/activity/activity.module').then( m => m.ActivityPageModule)
-  },
-  /*{
-    path: 'account',
-    loadChildren: () => import('./pages/landing/account/account.module').then( m => m.AccountPageModule)
+    path: 'help',
+    loadChildren: () => import('./pages/modals/help/help.module').then( m => m.HelpPageModule)
   },
   {
-    path: 'send',
-    loadChildren: () => import('./pages/landing/send/send.module').then( m => m.SendPageModule)
-  },
-  {
-    path: 'recipients',
-    loadChildren: () => import('./pages/landing/recipients/recipients.module').then( m => m.RecipientsPageModule)
-  },
-  {
-    path: 'invite',
-    loadChildren: () => import('./pages/landing/invite/invite.module').then( m => m.InvitePageModule)
-  },*/
-  /*{
-    path: 'activity',
-    loadChildren: () => import('./pages/landing/activity/activity.module').then( m => m.ActivityPageModule)
-  },*/
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  }
+  
 ];
 
 @NgModule({

@@ -18,6 +18,8 @@ export class LoginPage implements OnInit {
   email:any
   password:any
   loading:any
+  showPassword:any = false
+  inputType:any = "password"
 
   constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController) { 
     this.url = this.urlService.getUrl()
@@ -29,6 +31,7 @@ export class LoginPage implements OnInit {
     const alert = await this.alertController.create({
       header: header,
       message: text,
+      cssClass: 'alert-custom',
       buttons: ['OK']
     });
 
@@ -37,7 +40,7 @@ export class LoginPage implements OnInit {
 
   async presentLoading() {
     this.loading = await this.loadingController.create({
-      cssClass: 'my-custom-class'
+    
     });
     await this.loading.present();
   }
@@ -69,7 +72,7 @@ export class LoginPage implements OnInit {
         .subscribe((response: any) => {
           
           window.localStorage.setItem("user", JSON.stringify(response))
-          this.router.navigateByUrl("/tabs/activity");          
+          this.router.navigateByUrl("/tabs");          
     
         }, 
         (errorResponse: HttpErrorResponse) => {
@@ -98,10 +101,30 @@ export class LoginPage implements OnInit {
         string += data+"\n"
       })
 
-      this.presentAlert("Ha ocurrido un problema", string)
+      this.presentAlert("¡Ha ocurrido un problema!", string)
 
     })  
 
+  }
+
+  toggleShowPassword(){
+
+    if(this.showPassword){
+
+      this.showPassword = false
+      this.inputType = "password"
+
+    }else{
+
+      this.showPassword = true
+      this.inputType = "text"
+
+    }
+
+  }
+
+  passwordForgot(){
+    this.router.navigateByUrl("/forgot-password")
   }
 
 }

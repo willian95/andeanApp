@@ -27,8 +27,25 @@ export class RegisterPage implements OnInit {
   async presentAlert(header, text) {
     const alert = await this.alertController.create({
       header: header,
+      cssClass: 'alert-custom',
       message: text,
       buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertOk(header, text) {
+    const alert = await this.alertController.create({
+      header: header,
+      cssClass: 'alert-custom',
+      message: text,
+      buttons: [{
+        text: 'OK',
+        handler: () => {
+          this.router.navigateByUrl("/");  
+        }
+      }]
     });
 
     await alert.present();
@@ -75,7 +92,7 @@ export class RegisterPage implements OnInit {
       
       if(response.user){
 
-        this.presentAlert("Excelente", "Te has registrado con éxito, verifica tu bandeja de entrada para validar tu cuenta")
+        this.presentAlertOk("Excelente", "Te has registrado con éxito, verifica tu bandeja de entrada para validar tu cuenta")
         this.country = ""
         this.email  =""
         this.password = ""
@@ -92,9 +109,13 @@ export class RegisterPage implements OnInit {
       this.dimissLoading()
       let string = ""
       let errors = this.errorExtractService.extractErrorMessagesFromErrorResponse(errorResponse);
+      var i = 0;
 
       errors.forEach((data) => {
-        string += data+"\n"
+        if(i < 5)
+          string += "<p>"+data+"</p>"
+
+        i++
       })
 
       this.presentAlert("Ha ocurrido un problema", string)

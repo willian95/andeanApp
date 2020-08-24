@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendPage implements OnInit {
 
+  senderCurrency:any = "CLP"
+  receiverCurrency:any = "USD"
+
   constructor() { }
 
   ngOnInit() {

@@ -19,11 +19,10 @@
 		<ion-row>
 			<ion-col>
 
-				<ion-item>
+				<ion-item id="country-item">
           			<ion-label color="light">País de origen</ion-label>
-					<ion-select color="light" [(ngModel)]="country">
+					<ion-select color="light" [(ngModel)]="country" cancelText="Cancelar" >
 						<ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
-						
 					</ion-select>
 				</ion-item>
 
