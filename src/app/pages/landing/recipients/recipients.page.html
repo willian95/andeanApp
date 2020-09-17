@@ -1,13 +1,46 @@
 <ion-content>
 
-  <h2 style="margin-left: 20px; margin-top:40px; color: #1e3799; font-weight: bold;">Recipients</h2>
+  <h2 class="ion-text-center header">Destinatarios</h2>
 
   <p class="ion-text-center">
-    <img src="assets/users.jpg" alt="" style="width: 70%;">
+    <ion-button color="success" (click)="createRecipients()">crear</ion-button>
   </p>
 
-  <div style="padding-left: 30px; padding-right: 30px;">
-    <ion-button expand="block" fill="outline" color="secondary">Create your first recipient</ion-button>
-  </div>
+  <p class="ion-text-center" *ngIf="recipients.length <= 0">
+    <img src="assets/users.jpg" alt="" style="width: 70%;">
+  </p>
+  <p class="ion-text-center" *ngIf="recipients.length <= 0 && load == false">
+    <small>Aún no posees detinatarios</small>
+  </p>
+
+  <ion-item *ngIf="prevLink || nextLink" lines="none">
+    <p class="ion-text-center w-100" >
+      <ion-button *ngIf="prevLink" fill="outline" shape="round" (click)="paginate(prevLink)"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+      <ion-button *ngIf="nextLink" fill="outline" shape="round" (click)="paginate(nextLink)"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    </p>
+  </ion-item>
+
+  <ion-list *ngIf="recipients.length > 0">
+    <ion-item lines="none" *ngFor="let recipient of recipients;">
+      <ion-card>
+        <ion-item color="success">
+          <ion-label (click)="select(recipient.id)" >{{ recipient.name }} {{ recipient.lastname }}</ion-label>
+          <ion-button fill="outline" color="light" (click)="updateRecipients(recipient)" slot="end"><ion-icon name="create-outline"></ion-icon></ion-button>
+        </ion-item>
+      
+        <ion-card-content (click)="select(recipient.id)">
+          <p><strong>País: </strong>{{ recipient.country.name }}</p>
+          <p><strong>Banco: </strong>{{ recipient.bank_name }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="prevLink || nextLink" lines="none">
+    <p class="ion-text-center w-100" >
+      <ion-button *ngIf="prevLink" fill="outline" shape="round" (click)="paginate(prevLink)"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+      <ion-button *ngIf="nextLink" fill="outline" shape="round" (click)="paginate(nextLink)"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    </p>
+  </ion-item>
 
 </ion-content>

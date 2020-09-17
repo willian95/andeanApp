@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <h2 class="ion-text-center header">Actualizar Destinatario</h2>
+
+  <ion-item>
+    <ion-label>País de Origen</ion-label>
+    <ion-select [(ngModel)]="country" cancelText="Cancelar" *ngIf="countries.length > 0">
+      <ion-select-option [value]="countryOpt.id" *ngFor="let countryOpt of countries" >{{ countryOpt.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input type="text" [(ngModel)]="lastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Documento</ion-label>
+    <ion-input type="text" [(ngModel)]="dni"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Teléfono</ion-label>
+    <ion-input type="number" [(ngModel)]="phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Banco</ion-label>
+    <ion-input type="text" [(ngModel)]="bankName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cuenta</ion-label>
+    <ion-input type="text" [(ngModel)]="bankAccount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Código</ion-label>
+    <ion-input type="text" [(ngModel)]="code"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Dirección</ion-label>
+    <ion-textarea [(ngModel)]="address"></ion-textarea>
+  </ion-item>
+
+  <p class="ion-text-center" style="margin-top: 20px;">
+    <ion-button class="btn btn-primary" (click)="update()">actualizar</ion-button>
+  </p>
+
+</ion-content>

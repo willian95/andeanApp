@@ -7,16 +7,16 @@
           <ion-card-content>
             <ion-card-subtitle>Tú envías</ion-card-subtitle>
             <ion-item>
-              <ion-input value="1000" style="font-size: 22px; color: #1e3799"></ion-input>
+              <ion-input type="tel" [(ngModel)]="showMoneySend" style="font-size: 22px; color: #1e3799" (ionChange)="sendedAmountChanged()" [brmasker]="{money: true, decimalCaracter:',', thousand: '.'}"></ion-input>
             </ion-item>
           </ion-card-content>
         </ion-col>  
         <ion-col size="4" class="green-bg">
           <!--<h3 class="ion-text-center white-text" style="margin-top: 30px;">GBP</h3>-->
-          <ion-select [(ngModel)]="senderCurrency" cancelText="Cancelar">
-            <ion-select-option value="CLP">CLP</ion-select-option>
-            <ion-select-option value="EUR">EUR</ion-select-option>
-            <ion-select-option value="USD">USD</ion-select-option>
+          <ion-select [(ngModel)]="senderCurrency" cancelText="Cancelar" (ionChange)="fetchQuoteCur()" *ngIf="baseCur.length > 0">
+            
+            <ion-select-option [value]="i" *ngFor="let base of baseCur; let i = index;">{{ base.symbol }}</ion-select-option>
+
           </ion-select>
         </ion-col>
       </ion-row>
@@ -38,15 +38,14 @@
         <ion-col size="12">
           <ion-card-content>
             <ion-card-subtitle>Cambio</ion-card-subtitle>
-            <ion-item id="country-item">
+            <ion-item id="country-item" *ngIf="priorities.length > 0">
               <ion-label position="floating">Prioridad</ion-label>
-              <ion-select [(ngModel)]="country" cancelText="Cancelar" interface="action-sheet">
-                <ion-select-option value="1">Normal (3 días hábiles)</ion-select-option>
-                <ion-select-option value="2">Alta (Mismo día)</ion-select-option>
+              <ion-select [(ngModel)]="priority" cancelText="Cancelar" interface="action-sheet" (ionChange)="sendedAmountChanged()">
+                <ion-select-option [value]="i" *ngFor="let priorityOpt of priorities; let i = index;">{{ priorityOpt.label }} ({{ priorityOpt.sublabel }})</ion-select-option>
               </ion-select>
             </ion-item>
-            <p>Comision: 0.00</p>
-            <p>Monto a convertir: 0.00</p>
+            <p>Comision: {{ total }} <span *ngIf="total > 0">{{ symbols[senderCurrency].base.symbol }}</span></p>
+            <p>Monto a convertir: {{ totalToExchange }} <span *ngIf="total > 0">{{ symbols[senderCurrency].base.symbol }}</span></p>
             <p>Tipo de cambio: 1 = 0</p>
           </ion-card-content>
         </ion-col>
@@ -62,15 +61,13 @@
           <ion-card-content>
             <ion-card-subtitle>Destinatario recibe</ion-card-subtitle>
             <ion-item>
-              <ion-input value="1000" style="font-size: 22px; color: #3880ff"></ion-input>
+              <ion-input [(ngModel)]="showReceiveMoney" style="font-size: 22px; color: #1e3799" readonly></ion-input>
             </ion-item>
           </ion-card-content>
         </ion-col>  
         <ion-col size="4" class="green-bg">
-          <ion-select [(ngModel)]="receiverCurrency" cancelText="Cancelar">
-            <ion-select-option value="CLP">CLP</ion-select-option>
-            <ion-select-option value="EUR">EUR</ion-select-option>
-            <ion-select-option value="USD">USD</ion-select-option>
+          <ion-select [(ngModel)]="receiverCurrency" cancelText="Cancelar" (ionChange)="fetchExchangeRate()" *ngIf="quoteCur.length > 0">
+            <ion-select-option [value]="quote.id" *ngFor="let quote of quoteCur">{{ quote.symbol }}</ion-select-option>
           </ion-select>
         </ion-col>
       </ion-row>
@@ -78,8 +75,8 @@
     
   </ion-card>
 
-  <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-    <ion-button expand="block" color="primary">Continue</ion-button>
+  <div style="padding-top: 20px; padding-bottom: 20px;" class="ion-text-center">
+    <ion-button color="primary" (click)="presentAlertConfirm()">crear orden</ion-button>
   </div>
 
 </ion-content>

@@ -30,7 +30,7 @@
           
           <div class="ion-text-center" style="margin-top: 15px;">
 
-            <ion-button color="primary">
+            <ion-button color="primary" (click)="goToSend()">
               <ion-icon slot="start" name="paper-plane-outline"></ion-icon>
               Crear Orden
             </ion-button>
@@ -46,11 +46,53 @@
 
 
   <div class="card-padding">
-    <p class="ion-text-center">
-      <img src="assets/undraw_data_xmfy.png" alt="" style="width: 40%; margin-top: 30px;" />
+
+    <ion-item>
+      <ion-label position="floating">Filtrar por:</ion-label>
+      <ion-select [(ngModel)]="filter" cancelText="Cancelar" interface="action-sheet" (ionChange)="fetchOrders()">
+        <ion-select-option value="">Todas</ion-select-option>
+        <ion-select-option value="completed">Completadas</ion-select-option>
+        <ion-select-option value="rejected">Rechazadas</ion-select-option>
+        <ion-select-option value="expired">Expiradas</ion-select-option>
+        <ion-select-option value="filled">Realizadas</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="prevLink || nextLink" lines="none">
+      <p class="ion-text-center w-100" >
+        <ion-button *ngIf="prevLink" fill="outline" shape="round" (click)="paginate(prevLink)"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+        <ion-button *ngIf="nextLink" fill="outline" shape="round" (click)="paginate(nextLink)"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+      </p>
+    </ion-item>
+
+    <ion-list *ngIf="orders.length > 0">
+      <ion-item lines="none" *ngFor="let order of orders;">
+        <ion-card>
+          <ion-item color="success">
+            <ion-label  >{{ order.sended_amount }} {{ order.symbol.base.symbol }}</ion-label>
+            <ion-button (click)="showRecipients()" fill="outline" color="light" slot="end" *ngIf="!order.rejected && !order.completed && !order.expired && !order.filled && order.payment == null"><ion-icon name="create-outline"></ion-icon></ion-button>
+          </ion-item>
+        
+          <ion-card-content >
+            <p><strong>Prioridad: </strong>{{ order.priority_label }}</p>
+            <p><strong>Status: </strong><span *ngIf="order.rejected">Rezchazada</span><span *ngIf="order.completed">Completada</span><span *ngIf="order.expired">Expirada</span><span *ngIf="order.filled">LLenada</span><span *ngIf="order.payment">Pagada</span><span *ngIf="!order.rejected && !order.completed && !order.expired && !order.filled && order.payment == null">En espera de pago</span></p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-item *ngIf="prevLink || nextLink" lines="none">
+      <p class="ion-text-center w-100" >
+        <ion-button *ngIf="prevLink" fill="outline" shape="round" (click)="paginate(prevLink)"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+        <ion-button *ngIf="nextLink" fill="outline" shape="round" (click)="paginate(nextLink)"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+      </p>
+    </ion-item>
+
+    <p class="ion-text-center" *ngIf="orders.length <= 0">
+      <img src="assets/undraw_data_xmfy.png" alt="" style="width: 80%; margin-top: 30px;" />
     </p>
-    <h2 class="bold ion-text-center fnt-16">Aquí podrás ver todos tus movimientos</h2>
-    <p class="ion-text-center fnt-12">Aún no has realizado ningúna acción</p>
+    <h2 class="bold ion-text-center fnt-16" *ngIf="orders.length <= 0">Aquí podrás ver todos tus movimientos</h2>
+    <p class="ion-text-center fnt-12" *ngIf="orders.length <= 0 && load == false">Aún no has realizado ningúna acción</p>
   </div>
 
 </ion-content>

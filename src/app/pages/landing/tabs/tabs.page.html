@@ -1,38 +1,39 @@
 
 
 <ion-tabs (ionTabsDidChange)="check()">
+<!--<ion-tabs>-->
 	<ion-tab-bar slot="bottom">
 		<ion-tab-button tab="activity">
 			<ion-icon name="list"></ion-icon>
 			<ion-label>Dashboard</ion-label>
 		</ion-tab-button>
 	
-		<ion-tab-button tab="account" *ngIf="identityData == null && addressData == null">
+		<ion-tab-button tab="account" *ngIf="identityData == null && addressData == null && load == true">
 			<ion-icon name="card-outline"></ion-icon>
 			<ion-label>Identidad</ion-label>
 		</ion-tab-button>
 
-		<ion-tab-button tab="address" *ngIf="identityData != null && identityData.verified == true && addressData == null">
+		<ion-tab-button tab="address" *ngIf="identityData != null && identityData.verified == true && addressData == null && load == true">
 			<ion-icon name="earth-outline"></ion-icon>
 			<ion-label>Dirección</ion-label>
 		</ion-tab-button>
 	
-		<ion-tab-button tab="send" *ngIf="user && user.account_verified_at != null">
+		<ion-tab-button tab="send" *ngIf="user && identityData != null && identityData.verified == true && load == true">
 			<ion-icon name="cash-outline"></ion-icon>
 			<ion-label>Enviar</ion-label>
+		</ion-tab-button>
+
+		<ion-tab-button tab="recipients" *ngIf="user && identityData != null && identityData.verified == true && load == true">
+			<ion-icon name="people-outline"></ion-icon>
+			<ion-label>Destinatarios</ion-label>
 		</ion-tab-button>
 
 		<ion-tab-button tab="menu">
 			<ion-icon name="apps-outline"></ion-icon>
 			<ion-label>Menú</ion-label>
 		</ion-tab-button>
-	
-		<!--<ion-tab-button tab="recipients">
-			<ion-icon name="people-outline"></ion-icon>
-			<ion-label>Recipients</ion-label>
-		</ion-tab-button>
 
-		<ion-tab-button tab="invite">
+		<!--<ion-tab-button tab="invite">
 			<ion-icon name="gift-outline"></ion-icon>
 			<ion-label>Invite</ion-label>
 		</ion-tab-button>-->

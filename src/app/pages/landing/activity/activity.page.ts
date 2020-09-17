@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { UrlService } from '../../../services/url.service';
+import { ModalController  } from '@ionic/angular';
+import { RecipientsPage } from '../../modals/recipients/recipients.page';
 
 
 @Component({
@@ -15,8 +17,14 @@ export class ActivityPage implements OnInit {
   identityData:any
   addressData:any
   url:string
+  orders:any = []
+  load:any = true
+  filter:any
 
-  constructor(private urlService: UrlService, private http: HttpClient, private router: Router) { 
+  nextLink:any = null
+  prevLink:any = null
+
+  constructor(private urlService: UrlService, private http: HttpClient, private router: Router, public modalController: ModalController) { 
     this.url = this.urlService.getUrl()
     this.verifyMe()
   }
@@ -26,6 +34,7 @@ export class ActivityPage implements OnInit {
     this.verifyMe()
     this.identity()
     this.address()
+    this.fetchOrders()
 
   }
 
@@ -35,6 +44,10 @@ export class ActivityPage implements OnInit {
 
   goToAddress(){
     this.router.navigateByUrl("/tabs/address"); 
+  }
+
+  goToSend(){
+    this.router.navigateByUrl("/tabs/send"); 
   }
 
   identity(){
@@ -80,6 +93,59 @@ export class ActivityPage implements OnInit {
       console.log("test-address",this.addressData)
     })
 
+  }
+
+  fetchOrders(){
+
+    
+    let query = ""
+    if(this.filter == "completed"){
+      query = "?completed=true"
+    }
+    else if(this.filter == "rejected"){
+      query = "?rejected=true"
+    }
+    else if(this.filter == "filled"){
+      query = "?filled=true"
+    }
+    else if(this.filter == "expired"){
+      query = "?expired=true"
+    }
+
+    let headers = new HttpHeaders({
+      Authorization: "Bearer "+window.localStorage.getItem('token'),
+    });
+
+    this.http.get(this.url+"/api/v1/orders"+query, {headers})
+    .subscribe((response: any) => {
+      this.nextLink =  response.links.next
+      this.prevLink =  response.links.prev
+      this.orders = response.data
+    })
+
+  }
+
+  async showRecipients() {
+
+    const modal = await this.modalController.create({
+      component: RecipientsPage,
+      id:"RecipientsModal"
+    });
+    return await modal.present();
+  }
+
+  paginate(link){
+
+    let headers = new HttpHeaders({
+      Authorization: "Bearer "+window.localStorage.getItem('token'),
+    });
+
+    this.http.get(link, {headers})
+    .subscribe((response: any) => {
+      this.nextLink =  response.links.next
+      this.prevLink =  response.links.prev
+      this.orders = response.data
+    })
   }
 
   ngOnInit() {

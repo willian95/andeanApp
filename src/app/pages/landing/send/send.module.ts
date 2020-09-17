@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SendPageRoutingModule } from './send-routing.module';
 
 import { SendPage } from './send.page';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SendPageRoutingModule
+    SendPageRoutingModule,
+    BrMaskerModule
   ],
   declarations: [SendPage]
 })

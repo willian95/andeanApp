@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h2 class="ion-text-center">Transferencia</h2>
+
+  <ion-card *ngIf="account != null">
+    <ion-item color="success">
+      <ion-label >Cuenta</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      <p><strong>Banco: </strong>{{ account.bank_name }}</p>
+      <p><strong>Nombre: </strong>{{ account.account_name }}</p>
+      <p><strong>N° cuenta: </strong>{{ account.bank_account }}</p>
+      <p><strong>Código: </strong>{{ account.code }} </p>
+      <p><strong>País: </strong>{{ account.country.name }}</p>
+      <p><strong>Moneda: </strong>{{ account.currency.symbol }}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngIf="order != null">
+    <ion-item color="success">
+      <ion-label >Pago</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      <p><strong>Monto a Pagar: </strong>{{ order.payment_amount }} {{ order.symbol.base.symbol }}</p>
+      <p><strong>Tipo de Cambio: </strong>{{ order.exchange_rate }}</p>
+      <p><strong>Prioridad: </strong>{{ order.priority_sublabel }}</p>
+      <p><strong>Monto a Recibir: </strong>{{ order.received_amount }} {{ order.symbol.quoted.symbol }}</p>
+      <p><strong>Descripción del pago: </strong>{{ order.payment_code }} <ion-button color="primary" (click)="cp(order.payment_code)"><ion-icon name="copy-outline"></ion-icon></ion-button></p>
+    </ion-card-content>
+  </ion-card>
+
+  <p class="ion-text-center" *ngIf="order != null && account != null">
+    <ion-button color="primary" (click)="checkout()">Reportar Pago</ion-button>
+  </p>
+
+
+</ion-content>

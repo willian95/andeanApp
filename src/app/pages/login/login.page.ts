@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { UrlService } from '../../services/url.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { LoadingController, AlertController} from '@ionic/angular';
@@ -21,7 +22,7 @@ export class LoginPage implements OnInit {
   showPassword:any = false
   inputType:any = "password"
 
-  constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController) { 
+  constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, private navCtrl: NavController) { 
     this.url = this.urlService.getUrl()
     this.clientId = this.urlService.getClientId()
     this.clientSecret = this.urlService.getClientSecret()
@@ -72,7 +73,7 @@ export class LoginPage implements OnInit {
         .subscribe((response: any) => {
           
           window.localStorage.setItem("user", JSON.stringify(response))
-          this.router.navigateByUrl("/tabs");          
+          this.navCtrl.navigateRoot("/tabs");          
     
         }, 
         (errorResponse: HttpErrorResponse) => {

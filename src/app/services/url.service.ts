@@ -11,15 +11,17 @@ export class UrlService {
 
     //return "http://localhost:8000"
     return "http://servertest.sytes.net/andeanwide/public"
+    //return "https://andeanwide.com" //production
   }
 
   getClientId(){
-    return "2"
+    //return "3" //production
+    return "4"
   }
 
   getClientSecret(){
-    //return "P2RMCwn4nfwfwqAjEBf3tWzvo7AI8mSHRXKW0agh"
-    return "xYVQu0kD5iAjctHiiq4R3egxbZE1wmuWse3KpQcm"
+    //return "9wg6W8ZHxpmVboy9kY0xUzbNNhee4HKLfkZULlWl" //producction
+    return "ILviasCUD5lJFaZzdTFWPsxZvcu8TtunUqnibh3f"
   }
 
 }

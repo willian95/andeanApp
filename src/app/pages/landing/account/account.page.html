@@ -86,6 +86,9 @@
     <input type="file" name="file" id="image-front" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'front')"/>
     <ion-button color="success" (click)="presentActionSheet('front')">Subir imagen</ion-button>
   </ion-item>
+  <ion-item>
+    <img [src]="imageFront" alt="" class="image-input">
+  </ion-item>
 
   <!--<ion-item>
     <input type="file" name="file" id="image-front" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'front')"/>
@@ -96,6 +99,9 @@
     <p>Imagen documento de identidad - Reverso</p>
     <input type="file" name="file" id="image-rear" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event, 'rear')"/>
     <ion-button color="success" (click)="presentActionSheet('rear')">Subir imagen</ion-button>
+  </ion-item>
+  <ion-item>
+    <img [src]="imageRear" alt="" class="image-input">
   </ion-item>
 
   <!--<ion-item *ngIf="documentType == 'dni' || documentType == 'driver_license'">

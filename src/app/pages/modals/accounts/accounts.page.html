@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <h2 class="ion-text-center">Cuentas</h2>
+
+  <p class="ion-text-center" *ngIf="accounts.length <= 0">
+    <img src="assets/money_transfer__monochromatic.svg" alt="" style="width: 70%;">
+  </p>
+
+  <ion-list *ngIf="accounts.length > 0">
+
+    <div *ngFor="let account of accounts;">
+
+      <ion-item lines="none" *ngIf="currency_id == account.currency.id">
+        <ion-card (click)="select(account.id)">
+          <ion-item color="success">
+            <ion-label  >{{ account.bank_name }}</ion-label>
+          </ion-item>
+        
+          <ion-card-content>
+            <p><strong>País: </strong>{{ account.country.name }}</p>
+            <p><strong>Moneda: </strong>{{ account.currency.symbol }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+    </div>
+    
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h2 class="ion-text-center">Pago</h2>
+
+  <ion-item>
+    <ion-label position="floating">N° Transferencia</ion-label>
+    <ion-input [(ngModel)]="transaction_number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha de Transacción</ion-label>
+    <ion-datetime [(ngModel)]="transaction_date" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cantidad</ion-label>
+    <ion-input type="number" [(ngModel)]="payment_amount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-input type="text" [(ngModel)]="reason"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <p>Imagen de Transferencia</p>
+    <input type="file" name="file" id="image" class="inputfile" style="display:none; float: right;" accept="image/*" (change)="convertBase64($event)"/>
+    <ion-button color="success" (click)="presentActionSheet()">Imagen</ion-button>
+
+  </ion-item>
+  <ion-item>
+    <p><img [src]="image" alt="" *ngIf="image != null" class="image-input"></p>
+  </ion-item>
+
+  <p class="ion-text-center">
+    <ion-button style="margin-top: 15px;" (click)="presentAlertConfirm()">Reportar pago</ion-button>
+  </p>
+
+</ion-content>

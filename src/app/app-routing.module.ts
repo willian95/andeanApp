@@ -30,6 +30,30 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'recipients',
+    loadChildren: () => import('./pages/modals/recipients/recipients.module').then( m => m.RecipientsPageModule)
+  },
+  {
+    path: 'create-recipients',
+    loadChildren: () => import('./pages/modals/create-recipients/create-recipients.module').then( m => m.CreateRecipientsPageModule)
+  },
+  {
+    path: 'update-recipients',
+    loadChildren: () => import('./pages/modals/update-recipients/update-recipients.module').then( m => m.UpdateRecipientsPageModule)
+  },
+  {
+    path: 'create-payments',
+    loadChildren: () => import('./pages/modals/create-payments/create-payments.module').then( m => m.CreatePaymentsPageModule)
+  },
+  {
+    path: 'accounts',
+    loadChildren: () => import('./pages/modals/accounts/accounts.module').then( m => m.AccountsPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./pages/modals/checkout/checkout.module').then( m => m.CheckoutPageModule)
   }
   
 ];

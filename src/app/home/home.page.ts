@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { UrlService } from '../services/url.service';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { ErrorExtractorService } from '../services/error-extractor.service';
@@ -11,7 +12,7 @@ import { ErrorExtractorService } from '../services/error-extractor.service';
 export class HomePage {
 
   url:any
-  constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService) {
+  constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService, private navCtrl: NavController) {
     this.url = this.urlService.getUrl()
     this.verifyMe()
   }
@@ -37,7 +38,7 @@ export class HomePage {
     .subscribe((response: any) => {
       
       window.localStorage.setItem("user", JSON.stringify(response))
-      this.router.navigateByUrl("/tabs/activity");          
+      this.navCtrl.navigateRoot("/tabs");         
 
     }, 
     (errorResponse: HttpErrorResponse) => {

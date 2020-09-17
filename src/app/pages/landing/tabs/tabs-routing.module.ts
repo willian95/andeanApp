@@ -55,6 +55,15 @@ const routes: Routes = [
           ]
         },
         {
+          path: 'recipients',
+          children:[
+            {
+              path:'',
+              loadChildren: () => import('../recipients/recipients.module').then(m => m.RecipientsPageModule)
+            }
+          ]
+        },
+        {
           path: '',
           redirectTo: '/tabs/activity',
           pathMatch: 'full'

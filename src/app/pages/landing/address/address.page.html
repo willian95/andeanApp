@@ -3,7 +3,7 @@
   <h2 class="ion-text-center">Dirección</h2>
 
   <p class="ion-text-center">
-    <img src="assets/undraw_my_location_f9pr.png" alt="" style="width: 50%;">
+    <img src="assets/undraw_my_location_f9pr.png" alt="" style="width: 80%;">
   </p>
 
   <ion-item>
@@ -43,6 +43,11 @@
     <input type="file" name="file" id="image" class="inputfile" style="display:none" accept="image/*" (change)="convertBase64($event)"/>
     <ion-button color="success" (click)="presentActionSheet()">Subir imagen</ion-button>
   </ion-item>
+
+  <ion-item>
+    <img [src]="image" alt="" class="image-input">
+  </ion-item>
+
     <ion-button expand="full" (click)="verify()" style="margin-top: 10px;">Verificar</ion-button>
 
 

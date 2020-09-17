@@ -8,6 +8,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { UrlService } from '../../../services/url.service';
 import { ErrorExtractorService } from '../../../services/error-extractor.service';
+import { Base64 } from '@ionic-native/base64/ngx';
+import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 declare var cordova: any;
 
@@ -34,13 +36,13 @@ export class AccountPage implements OnInit {
   firstLastname:any
   secondLastname:any
 
-  imageRear:any
-  imageFront:any
+  imageRear:any = null
+  imageFront:any = null
   loading:any
   token:any
   userimage:any
 
-  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, public loadingControlller: LoadingController, private transfer: FileTransfer, private file: File, private camera: Camera, public platform: Platform, private filePath: FilePath) { 
+  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, public loadingControlller: LoadingController, private transfer: FileTransfer, private file: File, private camera: Camera, public platform: Platform, private filePath: FilePath, private base64: Base64, private domSanitizer:DomSanitizer) { 
     this.url = this.urlService.getUrl()
     this.fetchCountries()
   }
@@ -150,21 +152,40 @@ export class AccountPage implements OnInit {
           icon: 'caret-forward-circle',
           handler: () => {
             
-            if(imageType == "front"){
-
-              document.getElementById('image-front').click();
-
-            }else if(imageType == 'rear'){
-
-              document.getElementById('image-rear').click();
-
-            }
+            this.openGallery(imageType)
 
           }
         }
       ]
     });
     await actionSheet.present();
+  }
+
+  openGallery(imageType){
+
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      if(imageType == "front"){
+        this.imageFront  = 'data:image/jpeg;base64,' + imageData;
+      }
+
+      else if(imageType == "rear"){
+        this.imageRear  = 'data:image/jpeg;base64,' + imageData;
+      }
+      
+      //this.updateProfileImage()
+    }, (err) => {
+      // Handle error
+    })
   }
 
   convertBase64(event, imageType) {
@@ -200,22 +221,31 @@ export class AccountPage implements OnInit {
   public takePicture(imageType) {
 
     var options = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
+      quality: 40,
+      destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation:true,
+      targetWidth:720
     }
-
+    var _this = this
     this.camera.getPicture(options).then((imageData) => {
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      //let base64Image = 'data:image/jpeg;base64,' + imageData;
+      _this.base64.encodeFile(imageData).then((base64File: string) => {
+        console.log(base64File);
+
+        if(imageType == "front"){
+
+          _this.imageFront = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
+  
+        }else if(imageType == "rear"){
+          _this.imageRear = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
+        }
+
+      }, (err) => {
+        console.log(err);
+      });
       
-      if(imageType == "front"){
-
-        this.imageFront = base64Image
-
-      }else if(imageType == "rear"){
-        this.imageRear = base64Image
-      }
 
     
     }, (err) => {
