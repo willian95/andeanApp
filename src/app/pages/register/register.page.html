@@ -1,66 +1,67 @@
-<ion-header >
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button color="light"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
 	<ion-grid>
-		
-		<ion-row>
-			<ion-col>
-				<h2 class="text-center text-white">Únete a la revolución</h2>
+
+		<ion-row class="ion-justify-content-center">
+
+			<ion-col size="5" style="margin-top: 5rem; ">
+
+				<ion-img [src]="'../../../assets/logo.png'"></ion-img>
+
 			</ion-col>
-		</ion-row>
 
-		<ion-row>
-			<ion-col>
+			<ion-col size="12" style="margin-top: 5rem; margin-bottom: 1rem;">
 
-				<ion-item id="country-item">
+				<h6 class="text-center text-white">Bienvenido</h6>
+
+			</ion-col>
+
+			<ion-col size="10">
+
+				<!--<ion-item id="country-item" color="transparent">
           			<ion-label color="light">País de origen</ion-label>
 					<ion-select color="light" [(ngModel)]="country" cancelText="Cancelar" >
 						<ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
 					</ion-select>
-				</ion-item>
+				</ion-item>-->
 
-				<ion-item>
-					<ion-label color="light" position="floating">Tu correo electrónico</ion-label>
+				<ion-item color="transparent">
+					<ion-label color="light" position="floating">Email</ion-label>
 					<ion-input color="light" [(ngModel)]="email"></ion-input>
 				</ion-item>
 
-				<ion-item>
-					<ion-label color="light" position="floating">Escoge una contraseña</ion-label>
+				<ion-item color="transparent">
+					<ion-label color="light" position="floating">contraseña</ion-label>
 					<ion-input color="light" type="password" [(ngModel)]="password"></ion-input>
 				</ion-item>
 
 				<!--<small style="font-size: 10px;">El campo contraseña debe tener al menos 8 caracteres, entre mayúscula, minúscula, números y un carácter especial.</small>-->
 
-				<ion-item>
+				<ion-item color="transparent">
 					<ion-label color="light" position="floating">Repite la contraseña</ion-label>
 					<ion-input color="light" type="password" [(ngModel)]="passwordConfirmation"></ion-input>
 				</ion-item>
 
-				<p class="text-center">
-					<small style="font-size: 8px; color: #fff">El campo contraseña debe tener al menos 8 caracteres, entre mayúscula, minúscula, números y un carácter especial.</small>
-				</p>
+				<ion-item color="transparent" class="ion-no-padding">
+                   <ion-checkbox color="dark" checked slot="start"></ion-checkbox>
+                   <ion-label class="ion-text-wrap ion-text-center ion-no-padding"><small style="font-size: 12px;">Acepto los terminos y condiciones de andrean Wide.</small></ion-label>
+                </ion-item>
 
+			</ion-col>
+
+			<ion-col size="5">
+
+				<ion-button class="ion-text-capitalize" size="small" expand="block" color="medium" (click)="register()">Regístrate</ion-button>
+				
+			</ion-col>
+
+			<ion-col size="5">
+
+				<ion-button class="ion-text-capitalize" size="small" expand="block" color="medium" (click)="cancel()">Cancelar</ion-button>
+				
 			</ion-col>
 		</ion-row>
 
-		<ion-row>
-			<ion-col>
-				<p class="text-center" style="color:#fff">Al registrarte aceptas nuestros <strong>Términos de Uso</strong> y nuestra <strong>Política de Provacidad</strong></p>
-			</ion-col>
-		</ion-row>
-
-		<ion-row>
-			<ion-col>
-				<ion-button expand="block" color="light" (click)="register()"><span style="color: #22b573">Regístrate</span></ion-button>
-			</ion-col>
-		</ion-row>
 
 
 	</ion-grid>
