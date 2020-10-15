@@ -43,3 +43,15 @@ ion-header{
 ion-select{
     color: white !important;
 }
+
+.active {
+    height: 5px;
+    width: 100%;
+    background-color: #199c36;
+}
+
+.inactive {
+    height: 5px;
+    width: 100%;
+    background-color: #8e8e92;
+}

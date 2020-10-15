@@ -12,6 +12,7 @@ import { ErrorExtractorService } from '../../services/error-extractor.service';
 })
 export class RegisterPage implements OnInit {
 
+  typeUser: any = 1
   country:any = ""
   email:any = ""
   password:any = ""
@@ -76,6 +77,12 @@ export class RegisterPage implements OnInit {
       this.countries = response.data
 
     })
+  }
+  
+  typeUserSelect(opt) {
+    
+    this.typeUser = opt;
+
   }
 
   register(){
