@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@ionic-native/base64": "^5.28.0",
+    "@ionic-native/biometric-wrapper": "^5.28.0",
     "@ionic-native/camera": "^5.28.0",
     "@ionic-native/clipboard": "^5.28.0",
     "@ionic-native/core": "^5.0.7",
@@ -53,6 +54,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "cordova-plugin-biometric": "0.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
@@ -89,7 +91,8 @@
       },
       "cordova-plugin-filepath": {},
       "com-badrit-base64": {},
-      "cordova-clipboard": {}
+      "cordova-clipboard": {},
+      "cordova-plugin-biometric": {}
     },
     "platforms": [
       "android"
