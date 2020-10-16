@@ -100,7 +100,7 @@ const routes: Routes = [
     loadChildren: () => import('./verification/person-account/tax-document/tax-document.module').then( m => m.TaxDocumentPageModule)
   },
   {
-    path: 'verify-account',
+    path: 'verify-account-company',
     loadChildren: () => import('./verification/company-account/verify-account/verify-account.module').then( m => m.VerifyAccountPageModule)
   },
   {

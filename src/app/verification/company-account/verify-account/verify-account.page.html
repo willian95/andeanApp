@@ -1,9 +1,103 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>verify-account</ion-title>
+
+    <ion-title class="ion-text-center">Verificar Cuenta</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-grid>
+
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size="10">
+
+        <h6 class="ion-text-center small-text ion-no-padding">Necesitamos verificar tu identidad asi mantendremos tu cuenta segura.</h6>
+        
+      </ion-col>
+
+      <ion-col size="12">
+
+        <ion-item color="transparent" lines="none">
+
+            <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+
+              <ion-label class="ion-text-wrap">
+
+                <h2>Verificar Empresa</h2>
+
+                <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de tu documento de la empresa.</h6>
+
+              </ion-label>
+
+        </ion-item>
+
+        <ion-item  color="transparent" lines="none"> 
+
+          <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+
+            <ion-label class="ion-text-wrap">
+
+              <h2>Verificar residencia</h2>
+
+              <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de un servicio o alguna página que verifique tu residencia.</h6>
+
+            </ion-label>
+
+        </ion-item>
+
+        <ion-item  color="transparent" lines="none">
+
+            <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+
+             <ion-label class="ion-text-wrap">
+
+               <h2>Verificar telefóno</h2>
+
+              <h6 class="ion-text-justify small-text ion-no-padding">Verificar tu telefóno mediante un código de confirmación.</h6>
+
+            </ion-label>
+         </ion-item>
+
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid> 
+
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="cartera">
+       <ion-icon name="wallet-sharp"></ion-icon>
+      <ion-label>Cartera</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tarjetas">
+     <ion-icon name="card-sharp"></ion-icon>      
+     <ion-label>Tarjetas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="enviar">
+      <ion-icon name="swap-horizontal-sharp"></ion-icon>
+      <ion-label>Enviar</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="fondos">
+      <ion-icon name="add-circle-sharp"></ion-icon>
+      <ion-label>Añadir Fondos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="mas">
+      <ion-icon name="list"></ion-icon>
+      <ion-label>Más</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  
+</ion-tabs>
+
 
 </ion-content>
