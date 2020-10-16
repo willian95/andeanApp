@@ -54,6 +54,58 @@ const routes: Routes = [
   {
     path: 'checkout',
     loadChildren: () => import('./pages/modals/checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'face-id',
+    loadChildren: () => import('./verification/face-id/face-id.module').then( m => m.FaceIdPageModule)
+  },
+  {
+    path: 'verify-account',
+    loadChildren: () => import('./verification/person-account/verify-account/verify-account.module').then( m => m.VerifyAccountPageModule)
+  },
+  {
+    path: 'verify-identity',
+    loadChildren: () => import('./verification/person-account/verify-identity/verify-identity.module').then( m => m.VerifyIdentityPageModule)
+  },
+  {
+    path: 'identification-document',
+    loadChildren: () => import('./verification/person-account/identification-document/identification-document.module').then( m => m.IdentificationDocumentPageModule)
+  },
+  {
+    path: 'passport',
+    loadChildren: () => import('./verification/person-account/passport/passport.module').then( m => m.PassportPageModule)
+  },
+  {
+    path: 'driving-permit',
+    loadChildren: () => import('./verification/person-account/driving-permit/driving-permit.module').then( m => m.DrivingPermitPageModule)
+  },
+  {
+    path: 'personal-information',
+    loadChildren: () => import('./verification/person-account/personal-information/personal-information.module').then( m => m.PersonalInformationPageModule)
+  },
+  {
+    path: 'verify-residence',
+    loadChildren: () => import('./verification/person-account/verify-residence/verify-residence.module').then( m => m.VerifyResidencePageModule)
+  },
+  {
+    path: 'bank-statement',
+    loadChildren: () => import('./verification/person-account/bank-statement/bank-statement.module').then( m => m.BankStatementPageModule)
+  },
+  {
+    path: 'invoice',
+    loadChildren: () => import('./verification/person-account/invoice/invoice.module').then( m => m.InvoicePageModule)
+  },
+  {
+    path: 'tax-document',
+    loadChildren: () => import('./verification/person-account/tax-document/tax-document.module').then( m => m.TaxDocumentPageModule)
+  },
+  {
+    path: 'verify-account',
+    loadChildren: () => import('./verification/company-account/verify-account/verify-account.module').then( m => m.VerifyAccountPageModule)
+  },
+  {
+    path: 'verify-company',
+    loadChildren: () => import('./verification/company-account/verify-company/verify-company.module').then( m => m.VerifyCompanyPageModule)
   }
   
 ];
