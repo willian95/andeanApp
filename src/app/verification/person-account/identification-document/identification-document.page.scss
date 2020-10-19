@@ -1,0 +1,41 @@
+ion-label {
+    --color: #fff !important;
+    color: #fff !important;
+}
+
+.small-text {
+    font-size: 12px;
+    color: gray;
+}
+
+ion-item {
+    background-color: rgb(24, 34, 46);
+    cursor: pointer;
+}
+
+ion-item:hover {
+    background-color: rgb(28, 40, 55);
+}
+
+.add {
+    background-color: rgb(47, 59, 71);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ion-margin-top{
+    margin-top: 45px;
+}
+
+.icon-64 {
+    font-size: 64px;
+}
