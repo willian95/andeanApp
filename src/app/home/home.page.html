@@ -1,13 +1,13 @@
 <ion-content [fullscreen]="true">
-	<ion-slides style="margin-top: 2rem;" pager="true" [options]="slideOpts">	
+	<ion-slides class="ion-margin-top" pager="true" [options]="slideOpts">	
 		<ion-slide>
-            <ion-row class="ion-justify-content-center" >
-				<ion-col size="10">
-                   <ion-img [src]="'../../assets/telefono-PNG.png'"></ion-img>
+            <ion-row class="ion-justify-content-center ion-margin-bottom" >
+				<ion-col size="10" class="fullheight xc">
+                   <ion-img [src]="'../../assets/telefono-PNG.png'" class="img-slide2"></ion-img>
 				</ion-col>
-				<ion-col size="11">
-				   <h3 style="padding-left: 15px; padding-right: 15px;">Guardar y convierte diferentes monedas en segundos</h3> 
-				     <ion-label class="ion-text-wrap" color="medium"> 
+				<ion-col size="11" class="ion-margin-bottom">
+				   <h5 class="padding-left-right text-white">Guardar y convierte diferentes monedas en segundos</h5> 
+				     <ion-label class="ion-text-wrap small-text ion-margin-bottom" color="medium"> 
     					Podras activar difrentes monedasen tus balances de andea wide y convertir tu dinero de una a otra con tan solo un click
   					 </ion-label> 
 		        </ion-col>
@@ -15,12 +15,12 @@
        </ion-slide>	
 		<ion-slide>
             <ion-row class="ion-justify-content-center" >
-				<ion-col size="10">
-                   <ion-img [src]="'../../assets/telefono-2-PNG.png'"></ion-img>
+				<ion-col size="10" class="fullheight xc">
+                   <ion-img [src]="'../../assets/telefono-2-PNG.png'" class="img-slide"></ion-img>
 				</ion-col>
 				<ion-col size="11">
-				   <h3 style="padding-left: 15px; padding-right: 15px;">Enviar dinero nunca fue tan facil</h3> 
-				     <ion-label class="ion-text-wrap" color="medium">
+				   <h5 class="padding-left-right text-white">Enviar dinero nunca fue tan facil</h5> 
+				     <ion-label class="ion-text-wrap small-text" color="medium">
     					realiza todas tus transferencias con la app de andean wide, donde quiera qur estes solo con un click
   					 </ion-label> 
 		        </ion-col>
@@ -28,12 +28,12 @@
        </ion-slide>	
 	    <ion-slide>
             <ion-row class="ion-justify-content-center" >
-				<ion-col size="10">
-                   <ion-img [src]="'../../assets/telefono-3-PNG.png'"></ion-img>
+				<ion-col size="10" class="fullheight xc">
+                   <ion-img [src]="'../../assets/telefono-3-PNG.png'" class="img-slide"></ion-img>
 				</ion-col>
 				<ion-col size="11">
-				   <h3 style="padding-left: 15px; padding-right: 15px;">Podras abrir balances en CLP, USD Y EUR de Andean Wide </h3> 
-				     <ion-label class="ion-text-wrap" color="medium">
+				   <h5 class="padding-left-right text-white">Podras abrir balances en CLP, USD Y EUR de Andean Wide </h5> 
+				     <ion-label class="ion-text-wrap small-text" color="medium">
     					La manera mas facil de enviar y recibir pagos y ademas podras ahorrar tu dinero en moneda fuerte,
   					 </ion-label> 
 		        </ion-col>
@@ -43,13 +43,13 @@
 	<ion-grid >
 		<ion-row class="ion-justify-content-center">
 		  <ion-col size="6">
-			<ion-button class="ion-text-capitalize" color="success" expand="block" (click)="login()">Entra</ion-button>
+			<ion-button class="ion-text-capitalize" color="success" size="small" expand="block" (click)="login()">Entra</ion-button>
 		  </ion-col>
 		  <ion-col size="6">
-			<ion-button class="ion-text-capitalize" color="success" expand="block" (click)="register()">Registrate</ion-button>
+			<ion-button class="ion-text-capitalize" color="success"size="small" expand="block" (click)="register()">Registrate</ion-button>
 		  </ion-col>
 		  <ion-col>
-			<ion-button class="ion-text-capitalize" expand="block" color="medium">Iniciar sesión Apple</ion-button>
+			<ion-button class="ion-text-capitalize" expand="block" size="small" color="medium">Iniciar sesión Apple</ion-button>
 		  </ion-col>
 		</ion-row>
 	</ion-grid>
