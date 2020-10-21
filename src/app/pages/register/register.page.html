@@ -4,15 +4,15 @@
 
 		<ion-row class="ion-justify-content-center">
 
-			<ion-col size="5" style="margin-top: 5rem; ">
+			<ion-col size="5" class="ion-margin-top">
 
 				<ion-img [src]="'../../../assets/Logo.png'"></ion-img>
 
 			</ion-col>
 
-			<ion-col size="12" style="margin-top: 5rem; margin-bottom: 1rem;">
+			<ion-col size="12" style="margin-top: 3rem; margin-bottom: 1rem;">
 
-				<h6 class="text-center text-white">Bienvenido</h6>
+				<h5 class="text-center text-white">Bienvenido</h5>
 
 			</ion-col>
 
@@ -37,19 +37,19 @@
 					</ion-select>
 				</ion-item>-->
 
-				<ion-item color="transparent">
+				<ion-item color="transparent" style="border-bottom: 1px solid #fff;">
 					<ion-label color="light" position="floating">Email</ion-label>
 					<ion-input color="light" [(ngModel)]="email"></ion-input>
 				</ion-item>
 
-				<ion-item color="transparent">
+				<ion-item color="transparent" style="border-bottom: 1px solid #fff;">
 					<ion-label color="light" position="floating">contraseña</ion-label>
 					<ion-input color="light" type="password" [(ngModel)]="password"></ion-input>
 				</ion-item>
 
 				<!--<small style="font-size: 10px;">El campo contraseña debe tener al menos 8 caracteres, entre mayúscula, minúscula, números y un carácter especial.</small>-->
 
-				<ion-item color="transparent">
+				<ion-item color="transparent" style="border-bottom: 1px solid #fff;">
 					<ion-label color="light" position="floating">Repite la contraseña</ion-label>
 					<ion-input color="light" type="password" [(ngModel)]="passwordConfirmation"></ion-input>
 				</ion-item>

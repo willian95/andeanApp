@@ -22,18 +22,18 @@
 			</ion-col>
 			<ion-col size="10" style="margin-top: 5rem; margin-bottom: 1rem;">
 				
-				<ion-item color="transparent">
+				<ion-item color="transparent" style="border-bottom: 1px solid #fff;">
 					<ion-label position="floating">Email</ion-label>
 					<ion-input  [(ngModel)]="email"></ion-input>
 				</ion-item>
 
-				<ion-item color="transparent">
+				<ion-item color="transparent" style="border-bottom: 1px solid #fff;">
 					<ion-label position="floating">Contraseña</ion-label>
 					<ion-input  type="{{ inputType }}" [(ngModel)]="password"></ion-input>
-					<ion-button slot="end" color="transparent" style="margin-top: 20px;" (click)="toggleShowPassword()">
+					<!--<ion-button slot="end" color="transparent" style="margin-top: 20px;" (click)="toggleShowPassword()">
 						<ion-icon name="eye" *ngIf="!showPassword"></ion-icon>
 						<ion-icon name="eye-off" *ngIf="showPassword"></ion-icon>
-					</ion-button>
+					</ion-button>-->
 				</ion-item>
 
 			</ion-col>
