@@ -1,3 +1,11 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
 ion-label {
 
     --color: #fff !important;
@@ -11,8 +19,6 @@ ion-label {
 
     color: gray;
 }
-
-
 
 ion-item{
 
@@ -29,3 +35,9 @@ ion-item:hover {
 
 }
 
+
+.text-white {
+
+    color: #fff;
+    
+}

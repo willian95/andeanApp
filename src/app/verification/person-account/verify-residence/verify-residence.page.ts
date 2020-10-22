@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-verify-residence',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyResidencePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  bankStatement() {
+
+    this.router.navigateByUrl('/bank-statement');
+
+  }
+
+  invoice() {
+
+    this.router.navigateByUrl('/invoice');
+
+  }
+
+  taxDocument() {
+
+    this.router.navigateByUrl('/tax-document');
+
   }
 
 }

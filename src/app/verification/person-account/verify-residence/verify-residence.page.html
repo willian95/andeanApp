@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
 
-    <ion-title class="ion-text-center">Verificar residencia</ion-title>
+    <ion-title class="ion-text-center text-white">Verificar residencia</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -20,13 +20,13 @@
 
       <ion-col size="12">
 
-        <ion-item color="transparent" lines="none">
+        <ion-item color="transparent" lines="none" (click)="bankStatement()">
 
-              <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+              <ion-icon name="document-text-outline" class="text-white" slot="start"></ion-icon>
 
               <ion-label class="ion-text-wrap">
 
-                <h2>Estado de cuenta bancario</h2>
+                <h2 class="text-white">Estado de cuenta bancario</h2>
 
                 <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de tu cuenta bancaria.</h6>
 
@@ -34,13 +34,13 @@
 
         </ion-item>
 
-        <ion-item  color="transparent" lines="none"> 
+        <ion-item  color="transparent" lines="none" (click)="invoice()"> 
 
-            <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+            <ion-icon name="document-text-outline" class="text-white"class="text-white" slot="start"></ion-icon>
 
             <ion-label class="ion-text-wrap">
 
-              <h2>Factura</h2>
+              <h2 class="text-white">Factura</h2>
 
               <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de una factura de servicios básicos.</h6>
 
@@ -48,13 +48,13 @@
 
         </ion-item>
 
-        <ion-item  color="transparent" lines="none">
+        <ion-item  color="transparent" lines="none" (click)="taxDocument()">
 
-            <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+            <ion-icon name="document-text-outline" class="text-white" slot="start"></ion-icon>
 
              <ion-label class="ion-text-wrap">
 
-               <h2>Documento tributario</h2>
+               <h2 class="text-white">Documento tributario</h2>
 
               <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de tu documento tributario con dirección.</h6>
 

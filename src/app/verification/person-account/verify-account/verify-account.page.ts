@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-verify-account',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyAccountPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  verifyIdentity() {
+
+    this.router.navigateByUrl('/verify-identity');
+
+  }
+
+  verifyResidence() {
+
+    this.router.navigateByUrl('/verify-residence');
+
+  }
+
+
+  
 
 }

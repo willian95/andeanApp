@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-verify-identity',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyIdentityPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    
+  }
+
+  identificationDocument() {
+
+    this.router.navigateByUrl('/identification-document');
+
+  }
+
+  passport() {
+
+    this.router.navigateByUrl('/passport');
+
+  }
+
+  drivingPermit() {
+
+    this.router.navigateByUrl('/driving-permit');
+
   }
 
 }

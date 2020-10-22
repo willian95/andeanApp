@@ -79,6 +79,12 @@ export class RegisterPage implements OnInit {
     })
   }
   
+  cancel() {
+
+    this.router.navigateByUrl('/home');
+
+  }
+
   typeUserSelect(opt) {
     
     this.typeUser = opt;

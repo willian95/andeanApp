@@ -1,3 +1,11 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
 ion-label {
     --color: #fff !important;
     color: #fff !important;
@@ -10,4 +18,8 @@ ion-label {
     text-align: center !important;
 
     color:gray;
+}
+
+.text-white {
+    color: #fff;
 }

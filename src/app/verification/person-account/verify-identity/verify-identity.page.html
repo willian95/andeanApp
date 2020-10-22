@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
 
-    <ion-title class="ion-text-center">Verificar identidad</ion-title>
+    <ion-title class="ion-text-center text-white">Verificar identidad</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -20,13 +20,13 @@
 
       <ion-col size="12">
 
-        <ion-item color="transparent" lines="none">
+        <ion-item color="transparent" lines="none" (click)="identificationDocument()">
 
-              <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+              <ion-icon name="document-text-outline" class="text-white" slot="start"></ion-icon>
 
               <ion-label class="ion-text-wrap">
 
-                <h2>Documento de identidad</h2>
+                <h2 class="text-white">Documento de identidad</h2>
 
                 <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de tu documento de identidad.</h6>
 
@@ -34,13 +34,13 @@
 
         </ion-item>
 
-        <ion-item  color="transparent" lines="none"> 
+        <ion-item  color="transparent" lines="none" (click)="passport()"> 
 
-            <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+            <ion-icon name="document-text-outline" class="text-white" slot="start"></ion-icon>
 
             <ion-label class="ion-text-wrap">
 
-              <h2>Pasaporte</h2>
+              <h2 class="text-white">Pasaporte</h2>
 
               <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de tu pasaporte.</h6>
 
@@ -48,13 +48,13 @@
 
         </ion-item>
 
-        <ion-item  color="transparent" lines="none">
+        <ion-item  color="transparent" lines="none" (click)="drivingPermit()">
 
-            <ion-icon name="document-text-outline" color="dark" slot="start"></ion-icon>
+            <ion-icon name="document-text-outline" class="text-white" slot="start"></ion-icon>
 
              <ion-label class="ion-text-wrap">
 
-               <h2>Licencia de conducir</h2>
+               <h2 class="text-white">Licencia de conducir</h2>
 
               <h6 class="ion-text-justify small-text ion-no-padding">Sube una foto o un escaneado de la foto de tu licencia.</h6>
 
