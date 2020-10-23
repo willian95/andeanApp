@@ -106,6 +106,10 @@ const routes: Routes = [
   {
     path: 'verify-company',
     loadChildren: () => import('./verification/company-account/verify-company/verify-company.module').then( m => m.VerifyCompanyPageModule)
+  },
+  {
+    path: 'check-phone-person',
+    loadChildren: () => import('./verification/person-account/check-phone-person/check-phone-person.module').then( m => m.CheckPhonePersonPageModule)
   }
   
 ];
