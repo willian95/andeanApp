@@ -3,20 +3,20 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-verify-account',
-  templateUrl: './verify-account.page.html',
-  styleUrls: ['./verify-account.page.scss'],
+  selector: 'app-verify-account-company',
+  templateUrl: './verify-account-company.page.html',
+  styleUrls: ['./verify-account-company.page.scss'],
 })
-export class VerifyAccountPage implements OnInit {
+export class VerifyAccountCompanyPage implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  verifyIdentity() {
+  verifyCompany() {
 
-    this.router.navigateByUrl('/verify-identity');
+    this.router.navigateByUrl('/verify-company');
 
   }
 
@@ -32,9 +32,5 @@ export class VerifyAccountPage implements OnInit {
 
   }
 
-  
-
-
-  
 
 }

@@ -101,7 +101,7 @@ const routes: Routes = [
   },
   {
     path: 'verify-account-company',
-    loadChildren: () => import('./verification/company-account/verify-account/verify-account.module').then( m => m.VerifyAccountPageModule)
+    loadChildren: () => import('./verification/company-account/verify-account-company/verify-account-company.module').then(m => m.VerifyAccountCompanyPageModule)
   },
   {
     path: 'verify-company',
@@ -110,7 +110,8 @@ const routes: Routes = [
   {
     path: 'check-phone-person',
     loadChildren: () => import('./verification/person-account/check-phone-person/check-phone-person.module').then( m => m.CheckPhonePersonPageModule)
-  }
+  },
+
   
 ];
 

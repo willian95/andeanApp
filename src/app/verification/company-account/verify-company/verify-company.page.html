@@ -1,112 +1,59 @@
 <ion-header>
-  <ion-toolbar>
-
-    <ion-title class="ion-text-center">Verificar Empresa</ion-title>
-
-  </ion-toolbar>
+   <ion-toolbar>
+      <ion-title class="ion-text-center text-white">Verificar Empresa</ion-title>
+   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
-  <ion-grid>
-
-    <ion-row class="ion-justify-content-center">
-
-      <ion-col size="10">
-
-        <h6 class="ion-text-center small-text ion-no-padding">Sube una foto o un escaneado de los siguintes documentos.</h6>
-        
-      </ion-col>
-
-      <ion-col size="12">
-
-        <ion-item color="transparent" lines="none">
-
-            <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
-
-              <ion-label class="ion-text-wrap">
-
-                <h2>Escritura de la empresa</h2>
-
-              </ion-label>
-
-        </ion-item>
-
-        <ion-item  color="transparent" lines="none"> 
-
-          <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
-
-            <ion-label class="ion-text-wrap">
-
-              <h2>Rut de la empresa</h2>
-
-            </ion-label>
-
-        </ion-item>
-
-        <ion-item  color="transparent" lines="none">
-
-            <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
-
-             <ion-label class="ion-text-wrap">
-
-               <h2>Rut del representante legal</h2>
-
-            </ion-label>
-         </ion-item>
-
-
-      </ion-col>
-      
-      <ion-col size="10" style="position:absolute; top: 80%;">
-
-
-        	<ion-button class="ion-text-capitalize ion-activatable ripple-parent" size="small" expand="block" color="success">
-					
-					  Continuar
-
-				   <ion-ripple-effect></ion-ripple-effect>
-				   
-          </ion-button>
-        
-
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid> 
-
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="cartera">
-       <ion-icon name="wallet-sharp"></ion-icon>
-      <ion-label>Cartera</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tarjetas">
-     <ion-icon name="card-sharp"></ion-icon>      
-     <ion-label>Tarjetas</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="enviar">
-      <ion-icon name="swap-horizontal-sharp"></ion-icon>
-      <ion-label>Enviar</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="fondos">
-      <ion-icon name="add-circle-sharp"></ion-icon>
-      <ion-label>Añadir Fondos</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="mas">
-      <ion-icon name="list"></ion-icon>
-      <ion-label>Más</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-  
-</ion-tabs>
-
-
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10">
+            <h6 class="ion-text-center small-text ion-no-padding">Sube una foto o un escaneado de los siguienetes documentos.</h6>
+         </ion-col>
+         <ion-col size="12">
+            <ion-item color="transparent" lines="none">
+               <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Escritura de la empresa</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none">
+               <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">RUT de la empresa</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none" (click)="checkPhonePerson()">
+               <ion-icon name="add-circle-sharp" color="success" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">RUT del representante legal</h2>
+               </ion-label>
+            </ion-item>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
 </ion-content>
 
