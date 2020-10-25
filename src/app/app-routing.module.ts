@@ -111,8 +111,16 @@ const routes: Routes = [
     path: 'check-phone-person',
     loadChildren: () => import('./verification/person-account/check-phone-person/check-phone-person.module').then( m => m.CheckPhonePersonPageModule)
   },
+  {
+    path: 'wallet',
+    loadChildren: () => import('./pages/wallet/wallet.module').then( m => m.WalletPageModule)
+  },
+  {
+    path: 'account-services',
+    loadChildren: () => import('./pages/account-services/account-services.module').then( m => m.AccountServicesPageModule)
+  },
 
-  
+
 ];
 
 @NgModule({
