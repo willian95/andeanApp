@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'account-services',
+    redirectTo: 'bank-data-eur',
     pathMatch: 'full'
   },
   {
@@ -134,6 +134,26 @@ const routes: Routes = [
   {
     path: 'send-currency',
     loadChildren: () => import('./pages/send/send-currency/send-currency.module').then( m => m.SendCurrencyPageModule)
+  },
+  {
+    path: 'receiver',
+    loadChildren: () => import('./pages/send/receiver/receiver.module').then( m => m.ReceiverPageModule)
+  },
+  {
+    path: 'another-person',
+    loadChildren: () => import('./pages/send/another-person/another-person.module').then( m => m.AnotherPersonPageModule)
+  },
+  {
+    path: 'bank-data-usa',
+    loadChildren: () => import('./pages/send/bank-data-usa/bank-data-usa.module').then( m => m.BankDataUsaPageModule)
+  },
+  {
+    path: 'bank-data-eur',
+    loadChildren: () => import('./pages/send/bank-data-eur/bank-data-eur.module').then( m => m.BankDataEurPageModule)
+  },
+  {
+    path: 'bank-data-col',
+    loadChildren: () => import('./pages/send/bank-data-col/bank-data-col.module').then( m => m.BankDataColPageModule)
   },
 
 

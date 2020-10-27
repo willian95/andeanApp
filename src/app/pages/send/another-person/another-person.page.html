@@ -1,0 +1,76 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Otra Persona</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10" class="ion-margin-top-5">
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Email</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Nombres y Apellidos</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Documentos</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Teléfono</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Dirección</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item id="country-item" color="transparent" class="border-bottom-white">
+               <ion-label color="light">País de origen</ion-label>
+               <ion-select color="light" [(ngModel)]="country" cancelText="Cancelar">
+               <ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
+               </ion-select>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+               <ion-icon class="icon-32" name="add-circle-sharp" color="success" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <span class="ion-text-justify small-text2 ion-no-padding">Agregar datos bancarios</span>
+               </ion-label>
+            </ion-item>
+         </ion-col>
+         <ion-col size="10" class="position-buttom">
+            <ion-button class="ion-text-capitalize ion-activatable ripple-parent" size="small" expand="block" color="success">
+               Continuar
+               <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-content>
+

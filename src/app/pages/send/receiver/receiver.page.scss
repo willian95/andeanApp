@@ -1,0 +1,64 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
+ion-label {
+    --color: #fff !important;
+    color: #fff !important;
+}
+
+.small-text {
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.small-text2 {
+    font-size: 1rem;
+    color: gray;
+}
+ion-item {
+    background-color: rgb(24, 34, 46);
+    cursor: pointer;
+}
+
+ion-item:hover {
+    background-color: rgb(28, 40, 55);
+}
+
+
+.ion-margin-top {
+    margin-top: 45px;
+}
+
+.icon-32 {
+    font-size: 32px;
+}
+
+.text-white {
+
+    color: #fff;
+
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img{
+   width: 80%;
+   height: auto;
+   text-align: center;
+}
+
