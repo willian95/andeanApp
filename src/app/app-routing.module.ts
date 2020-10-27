@@ -127,6 +127,14 @@ const routes: Routes = [
     path: 'card',
     loadChildren: () => import('./pages/cards/card/card.module').then( m => m.CardPageModule)
   },
+    {
+    path: 'send',
+    loadChildren: () => import('./pages/landing/send/send.module').then( m => m.SendPageModule)
+  },
+  {
+    path: 'send-currency',
+    loadChildren: () => import('./pages/send/send-currency/send-currency.module').then( m => m.SendCurrencyPageModule)
+  },
 
 
 ];
