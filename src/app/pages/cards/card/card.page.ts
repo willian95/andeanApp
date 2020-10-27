@@ -2,26 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-wallet',
-  templateUrl: './wallet.page.html',
-  styleUrls: ['./wallet.page.scss'],
+  selector: 'app-card',
+  templateUrl: './card.page.html',
+  styleUrls: ['./card.page.scss'],
 })
-export class WalletPage implements OnInit {
-
-  public slideOpts = {
-    initialSlide: 0,
-    speed: 400
-  };
+export class CardPage implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-  }
-
-  accountServices() {
-
-    this.router.navigateByUrl('/account-services');
-
   }
 
   selectCard() {
@@ -41,6 +30,5 @@ export class WalletPage implements OnInit {
     this.router.navigateByUrl('/card');
 
   }
-
 
 }

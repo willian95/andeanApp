@@ -4,7 +4,7 @@
          <h5 slot="start" class="text-white ion-text-capitalize">Historia</h5>       
       </ion-button>
       <ion-title class="text-white ion-text-center">Cartera</ion-title>
-     <ion-button slot="end"  color="transparent" fill="clear">
+     <ion-button slot="end"  color="transparent" fill="clear" (click)="accountServices()">
       <ion-icon name="person-sharp" class="text-white"></ion-icon>
      </ion-button>
    </ion-toolbar>
@@ -154,11 +154,11 @@
    </ion-grid>
    <ion-tabs>
       <ion-tab-bar slot="bottom">
-         <ion-tab-button tab="cartera">
+         <ion-tab-button tab="cartera" (click)="wallet()">
             <ion-icon name="wallet-sharp"></ion-icon>
             <ion-label>Cartera</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="tarjetas">
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
             <ion-icon name="card-sharp"></ion-icon>
             <ion-label>Tarjetas</ion-label>
          </ion-tab-button>

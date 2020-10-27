@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'account-services',
     pathMatch: 'full'
   },
   {
@@ -118,6 +118,14 @@ const routes: Routes = [
   {
     path: 'account-services',
     loadChildren: () => import('./pages/account-services/account-services.module').then( m => m.AccountServicesPageModule)
+  },
+  {
+    path: 'select-card',
+    loadChildren: () => import('./pages/cards/select-card/select-card.module').then( m => m.SelectCardPageModule)
+  },
+  {
+    path: 'card',
+    loadChildren: () => import('./pages/cards/card/card.module').then( m => m.CardPageModule)
   },
 
 
