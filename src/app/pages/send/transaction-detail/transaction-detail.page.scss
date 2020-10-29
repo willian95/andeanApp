@@ -13,7 +13,7 @@ ion-label {
 
 ion-input {
     color: #fff;
-    height: 35px;
+    height: 50px;
     font-size: 0.8rem;
 
 }
@@ -86,4 +86,10 @@ ion-item {
 
 .ion-margin-top-5 {
     margin-top: 5px;
+}
+
+:host(.item-interactive.item-has-focus),
+:host(.item-interactive.ion-touched.ion-invalid) {
+    --full-highlight-height: 0;
+    --inset-highlight-height: 0;
 }
