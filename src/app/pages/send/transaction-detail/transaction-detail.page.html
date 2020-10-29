@@ -1,0 +1,78 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Revisar detalles</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="11">
+            <ion-item  color="transparent" class="ion-text-center ion-no-margin ion-no-pading">
+               <span class="small-text2">Estimamos que <b class="small-text">75 USD</b> llegara a la cuenta de <b class="small-text">José Chavez</b> el 21 de septiembre</span>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white ion-no-margin ion-no-pading">
+               <ion-label position="floating">Banco</ion-label>
+               <ion-input value="Bank Of America" readonly></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white ion-no-margin ion-no-pading">
+               <ion-label position="floating">Swift / Aba</ion-label>
+               <ion-input value="BOFA12XXX" readonly></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white ion-no-margin ion-no-pading">
+               <ion-label position="floating">Cuenta</ion-label>
+               <ion-input value="9494651009800" readonly></ion-input>
+            </ion-item>
+         </ion-col>
+         <ion-col size="11" class="ion-no-margin ion-no padding">
+            <span class="small-text2 ion-no-margin ion-no padding">Envias</span>
+         </ion-col> 
+          <ion-col size="11" class="ion-no-margin ion-no padding">
+               <span class="small-text ion-no-margin ion-no padding">100.000 CLP</span>
+         </ion-col>   
+         <ion-col size="11" class="ion-no-margin ion-no padding">
+            <span class="small-text2 ion-no-margin ion-no padding">Jóse Chavez recibe</span>
+         </ion-col>
+         <ion-col size="11" class="ion-no-margin ion-no padding">
+            <span class="small-text ion-no-margin ion-no padding">775</span>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Escribe una referencia</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Correo destinatario</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+         </ion-col>          
+         <ion-col size="12" class="position-buttom">
+            <ion-button class="ion-text-capitalize" size="small" expand="block" color="success" (click)="payYourTransfer()">
+               Confirmar
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-content>
+

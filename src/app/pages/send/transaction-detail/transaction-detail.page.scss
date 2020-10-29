@@ -7,12 +7,15 @@ ion-header {
 }
 
 ion-label {
-    --color: #fff !important;
-    color: #fff !important;
+    --color: gray !important;
+    color: gray !important;
 }
 
 ion-input {
     color: #fff;
+    height: 35px;
+    font-size: 0.8rem;
+
 }
 
 ion-select {
@@ -20,25 +23,21 @@ ion-select {
 }
 
 .small-text {
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: #fff;
 }
 
 
 .small-text2 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: gray;
 }
 
 ion-item {
     background-color: rgb(24, 34, 46);
     cursor: pointer;
+    height: 50px;
 }
-
-ion-item:hover {
-    background-color: rgb(28, 40, 55);
-}
-
 
 .ion-margin-top {
     margin-top: 45px;

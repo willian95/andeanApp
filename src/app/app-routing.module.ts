@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'bank-data-eur',
+    redirectTo: 'transaction-detail',
     pathMatch: 'full'
   },
   {
@@ -154,6 +154,14 @@ const routes: Routes = [
   {
     path: 'bank-data-col',
     loadChildren: () => import('./pages/send/bank-data-col/bank-data-col.module').then( m => m.BankDataColPageModule)
+  },
+  {
+    path: 'transaction-detail',
+    loadChildren: () => import('./pages/send/transaction-detail/transaction-detail.module').then( m => m.TransactionDetailPageModule)
+  },
+  {
+    path: 'pay-your-transfer',
+    loadChildren: () => import('./pages/send/pay-your-transfer/pay-your-transfer.module').then( m => m.PayYourTransferPageModule)
   },
 
 
