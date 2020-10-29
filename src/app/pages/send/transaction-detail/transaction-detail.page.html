@@ -24,16 +24,10 @@
             </ion-item>
          </ion-col>
          <ion-col size="11" class="ion-no-margin ion-no padding">
-            <span class="small-text2 ion-no-margin ion-no padding">Envias</span>
-         </ion-col> 
-          <ion-col size="11" class="ion-no-margin ion-no padding">
-               <span class="small-text ion-no-margin ion-no padding">100.000 CLP</span>
-         </ion-col>   
-         <ion-col size="11" class="ion-no-margin ion-no padding">
-            <span class="small-text2 ion-no-margin ion-no padding">Jóse Chavez recibe</span>
-         </ion-col>
-         <ion-col size="11" class="ion-no-margin ion-no padding">
-            <span class="small-text ion-no-margin ion-no padding">775</span>
+            <h6 class="small-text2 ion-no-margin ion-no padding">Envias</h6>
+            <h6 class="small-text ion-no-margin ion-no padding">100.000 CLP</h6>
+            <h6 class="small-text2 ion-no-margin ion-no padding">Jóse Chavez recibe</h6>
+            <h6 class="small-text ion-no-margin ion-no padding">775</h6>
             <ion-item color="transparent" class="border-bottom-white">
                <ion-label position="floating">Escribe una referencia</ion-label>
                <ion-input></ion-input>
@@ -42,14 +36,16 @@
                <ion-label position="floating">Correo destinatario</ion-label>
                <ion-input></ion-input>
             </ion-item>
-         </ion-col>          
-         <ion-col size="12" class="position-buttom">
+         </ion-col>        
+         <ion-col size="10" class="position-buttom">
             <ion-button class="ion-text-capitalize" size="small" expand="block" color="success" (click)="payYourTransfer()">
                Confirmar
             </ion-button>
          </ion-col>
       </ion-row>
    </ion-grid>
+</ion-content>
+   <ion-toolbar>
    <ion-tabs>
       <ion-tab-bar slot="bottom">
          <ion-tab-button tab="cartera" (click)="wallet()">
@@ -74,5 +70,4 @@
          </ion-tab-button>
       </ion-tab-bar>
    </ion-tabs>
-</ion-content>
-
+  </ion-toolbar>
