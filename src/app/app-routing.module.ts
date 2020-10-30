@@ -163,6 +163,18 @@ const routes: Routes = [
     path: 'pay-your-transfer',
     loadChildren: () => import('./pages/send/pay-your-transfer/pay-your-transfer.module').then( m => m.PayYourTransferPageModule)
   },
+  {
+    path: 'send-bank-transfer',
+    loadChildren: () => import('./pages/send/send-bank-transfer/send-bank-transfer.module').then( m => m.SendBankTransferPageModule)
+  },
+  {
+    path: 'send-bank-transfer-loading',
+    loadChildren: () => import('./pages/send/send-bank-transfer-loading/send-bank-transfer-loading.module').then( m => m.SendBankTransferLoadingPageModule)
+  },
+  {
+    path: 'payment-support',
+    loadChildren: () => import('./pages/send/payment-support/payment-support.module').then( m => m.PaymentSupportPageModule)
+  },
 
 
 ];

@@ -13,9 +13,7 @@ ion-label {
 
 ion-input {
     color: #fff;
-    height: 10px;
     font-size: 0.8rem;
-
 }
 
 ion-select {
@@ -38,9 +36,8 @@ ion-item {
     cursor: pointer;
 }
 
-
 .ion-margin-top {
-    margin-top: 45px;
+    margin-top: 5px;
 }
 
 .icon-32 {
@@ -81,9 +78,22 @@ ion-item {
 
 .position-buttom {
     position: fixed;
-    top: 84%;
+    top: 83%;
 }
 
 .ion-margin-top-5 {
     margin-top: 5px;
+}
+
+:host(.item-interactive.item-has-focus),
+:host(.item-interactive.ion-touched.ion-invalid) {
+    --full-highlight-height: 0;
+    --inset-highlight-height: 0;
+}
+
+.separator{
+    margin-top: 0px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    margin-bottom: 0px;
 }

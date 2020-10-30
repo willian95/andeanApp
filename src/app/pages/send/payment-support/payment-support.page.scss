@@ -13,7 +13,6 @@ ion-label {
 
 ion-input {
     color: #fff;
-    height: 10px;
     font-size: 0.8rem;
 
 }
@@ -40,7 +39,7 @@ ion-item {
 
 
 .ion-margin-top {
-    margin-top: 45px;
+    margin-top: 5px;
 }
 
 .icon-32 {
@@ -65,9 +64,13 @@ ion-item {
 }
 
 .img {
-    width: 80%;
+    position: relative;
+    left: 35%;
+    width: 35%;
     height: auto;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .border-bottom-white {
@@ -85,5 +88,28 @@ ion-item {
 }
 
 .ion-margin-top-5 {
-    margin-top: 5px;
+    margin-top: 10px;
 }
+
+.watermark {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+}
+
+.watermark:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    opacity: 0.1;
+    background-image: url('../../../../assets/Logo.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0 50%;
+    background-size: 100%;
+}
+

@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-pay-your-transfer',
-  templateUrl: './pay-your-transfer.page.html',
-  styleUrls: ['./pay-your-transfer.page.scss'],
+  selector: 'app-payment-support',
+  templateUrl: './payment-support.page.html',
+  styleUrls: ['./payment-support.page.scss'],
 })
-export class PayYourTransferPage implements OnInit {
+export class PaymentSupportPage implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
 
   wallet() {
 
@@ -26,13 +24,5 @@ export class PayYourTransferPage implements OnInit {
     this.router.navigateByUrl('/card');
 
   }
-
-  sendBankTransfer() {
-
-    this.router.navigateByUrl('/send-bank-transfer');
-
-  }
-  
-
 
 }
