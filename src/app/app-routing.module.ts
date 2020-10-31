@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'transaction-detail',
+    redirectTo: 'add-funds',
     pathMatch: 'full'
   },
   {
@@ -174,6 +174,26 @@ const routes: Routes = [
   {
     path: 'payment-support',
     loadChildren: () => import('./pages/send/payment-support/payment-support.module').then( m => m.PaymentSupportPageModule)
+  },
+  {
+    path: 'add-funds',
+    loadChildren: () => import('./pages/add-funds/add-funds/add-funds.module').then( m => m.AddFundsPageModule)
+  },
+  {
+    path: 'add-funds-detail',
+    loadChildren: () => import('./pages/add-funds/add-funds-detail/add-funds-detail.module').then( m => m.AddFundsDetailPageModule)
+  },
+  {
+    path: 'add-funds-bank-transfer',
+    loadChildren: () => import('./pages/add-funds/add-funds-bank-transfer/add-funds-bank-transfer.module').then( m => m.AddFundsBankTransferPageModule)
+  },
+  {
+    path: 'add-funds-bank-transfer-loading',
+    loadChildren: () => import('./pages/add-funds/add-funds-bank-transfer-loading/add-funds-bank-transfer-loading.module').then( m => m.AddFundsBankTransferLoadingPageModule)
+  },
+  {
+    path: 'add-funds-term',
+    loadChildren: () => import('./pages/add-funds/add-funds-term/add-funds-term.module').then( m => m.AddFundsTermPageModule)
   },
 
 

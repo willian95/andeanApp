@@ -1,0 +1,99 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
+ion-label {
+    --color: gray !important;
+    color: gray !important;
+}
+
+ion-input {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+ion-select {
+    color: white !important;
+}
+
+.small-text {
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+
+.small-text2 {
+    font-size: 0.7rem;
+    color: gray;
+}
+
+ion-item {
+    background-color: rgb(24, 34, 46);
+    cursor: pointer;
+}
+
+.ion-margin-top {
+    margin-top: 5px;
+}
+
+.icon-32 {
+    font-size: 32px;
+}
+
+.text-white {
+
+    color: #fff;
+
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img {
+    width: 80%;
+    height: auto;
+    text-align: center;
+}
+
+.border-bottom-white {
+    border-bottom: 1px solid #fff;
+}
+
+.margin-inputs {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+
+.position-buttom {
+    position: fixed;
+    top: 83%;
+}
+
+.ion-margin-top-5 {
+    margin-top: 5px;
+}
+
+:host(.item-interactive.item-has-focus),
+:host(.item-interactive.ion-touched.ion-invalid) {
+    --full-highlight-height: 0;
+    --inset-highlight-height: 0;
+}
+
+.separator {
+    margin-top: 0px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    margin-bottom: 0px;
+}
