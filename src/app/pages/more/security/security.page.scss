@@ -108,3 +108,11 @@ ion-item {
     --full-highlight-height: 0;
     --inset-highlight-height: 0;
 }
+
+ion-toggle {
+    --background: #84858a;
+    --background-checked: #fff;
+    --handle-background: #fff;
+    --handle-background-checked: #84858a;
+}
+

@@ -1,0 +1,66 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Seguridad de la Cuenta</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="12" class="ion-no-margin ion-no-padding">
+            <h5 class="text-white small-text ion-text-center">Verificación en 2 pasos</h5>
+         </ion-col>
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <h5 class="small-text2 ion-text-justify ion-no-margin ion-no-padding">Cuando tú o alguien más intente iniciar sesión, te enviaremos una notificación a este dispositivo.</h5>
+         </ion-col>
+         <ion-col size="3">
+            <ion-select color="light" class="input">
+               <ion-select-option value="56" checked="true">+56</ion-select-option>
+            </ion-select>
+         </ion-col>
+         <ion-col size="7">
+               <ion-input color="light"  type="tel" placeholder="+5685424369" class="input" maxlength="12"></ion-input>
+               <span class="small-text3">Cambiar</span>
+         </ion-col>
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <h5 class="small-text2 ion-text-justify ion-no-margin ion-no-padding">Puede recibir un SMS a este número en caso de que no reciba una notificación de inicio se sesión.</h5>
+         </ion-col>
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <h5 class="text-white small-text ion-text-center">Complete la configuración de seguridad</h5>
+         </ion-col>
+         <ion-col size="11" class="ion-no-margin ion-no-padding">
+            <ion-item  color="transparent" lines="none">
+               <ion-img [src]="'../../../assets/icono-3.png'" slot="start" style="width:12%;"></ion-img>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white small-text">Añadir un número de teléfono de recuperación</h2>
+               </ion-label>
+            </ion-item>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>

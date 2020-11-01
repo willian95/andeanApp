@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'add-funds',
+    redirectTo: 'more',
     pathMatch: 'full'
   },
   {
@@ -194,6 +194,34 @@ const routes: Routes = [
   {
     path: 'add-funds-term',
     loadChildren: () => import('./pages/add-funds/add-funds-term/add-funds-term.module').then( m => m.AddFundsTermPageModule)
+  },
+  {
+    path: 'more',
+    loadChildren: () => import('./pages/more/more/more.module').then( m => m.MorePageModule)
+  },
+  {
+    path: 'record',
+    loadChildren: () => import('./pages/more/record/record.module').then( m => m.RecordPageModule)
+  },
+  {
+    path: 'security',
+    loadChildren: () => import('./pages/more/security/security.module').then( m => m.SecurityPageModule)
+  },
+  {
+    path: 'change-mail',
+    loadChildren: () => import('./pages/more/change-mail/change-mail.module').then( m => m.ChangeMailPageModule)
+  },
+  {
+    path: 'two-step-verification',
+    loadChildren: () => import('./pages/more/two-step-verification/two-step-verification.module').then( m => m.TwoStepVerificationPageModule)
+  },
+  {
+    path: 'your-balance',
+    loadChildren: () => import('./pages/more/your-balance/your-balance.module').then( m => m.YourBalancePageModule)
+  },
+  {
+    path: 'convert',
+    loadChildren: () => import('./pages/more/convert/convert.module').then( m => m.ConvertPageModule)
   },
 
 

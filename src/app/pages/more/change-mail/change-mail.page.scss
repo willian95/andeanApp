@@ -22,7 +22,7 @@ ion-select {
 }
 
 .small-text {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #fff;
 }
 
@@ -30,6 +30,11 @@ ion-select {
 .small-text2 {
     font-size: 0.7rem;
     color: gray;
+}
+
+.small-text3 {
+    font-size: 0.5rem;
+    color: #fff;
 }
 
 ion-item {
@@ -107,4 +112,14 @@ ion-item {
 :host(.item-interactive.ion-touched.ion-invalid) {
     --full-highlight-height: 0;
     --inset-highlight-height: 0;
+}
+
+.input {
+    background-color: dimgray;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: justify;
+    color: honeydew;
+    height: 33px;
+    padding-left: 6px;
 }

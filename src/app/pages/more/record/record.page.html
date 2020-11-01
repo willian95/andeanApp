@@ -1,0 +1,94 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Más</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="11" class="ion-no-margin ion-no-padding">
+          <h5 class="text-white ion-text-justify">Transacciones</h5>
+         </ion-col>
+         <ion-col size="11" class="ion-no-margin ion-no-padding">
+            <ion-row class="ion-justify-content-center ion-no-margin ion-no-padding">
+                <ion-col size="4" class="ion-text-center ion-no-margin ion-no-padding">
+                    <h6 class="small-text2 ion-text-center ion-no-margin ion-no-padding">Cantidad</h6>
+                 </ion-col>
+                 <ion-col size="4" class="ion-text-center ion-no-margin ion-no-padding">
+                    <h6 class="small-text2 ion-text-center ion-no-margin ion-no-padding">Fecha</h6>
+                 </ion-col>  
+                 <ion-col size="4" class="ion-text-center ion-no-margin ion-no-padding">
+                    <h6 class="small-text2 ion-text-center ion-no-margin ion-no-padding">Estatus</h6>
+                 </ion-col>                             
+                <ion-col size="4" class="ion-text-center">
+                     <h6 class="text-white small-text ion-text-center ion-no-margin ion-no-padding">100.000000</h6>
+                 </ion-col>
+                 <ion-col size="4" class="ion-text-right">
+                     <h6 class="text-white small-text ion-text-right ion-no-margin ion-no-padding">09/17/2020</h6>
+                     <h6 class="small-text3 ion-text-right ion-no-margin ion-no-padding">11:18PM</h6>
+                 </ion-col>  
+                 <ion-col size="4" class="ion-text-center">
+                    <h6 class="small-text ion-text-center ion-no-margin ion-no-padding">--</h6>
+                 </ion-col>                             
+                 <ion-col size="4" class="ion-text-center">
+                     <h6 class="text-white small-text ion-text-center ion-no-margin ion-no-padding">100.000000</h6>
+                 </ion-col>
+                 <ion-col size="4" class="ion-text-right">
+                     <h6 class="text-white small-text ion-text-right ion-no-margin ion-no-padding">09/17/2020</h6>
+                     <h6 class="small-text3 ion-text-right ion-no-margin ion-no-padding">11:18PM</h6>
+                 </ion-col>  
+                 <ion-col size="4" class="ion-text-center">
+                    <h6 class="small-text ion-text-center ion-no-margin ion-no-padding">--</h6>
+                 </ion-col>                             
+                <ion-col size="4" class="ion-text-center">
+                     <h6 class="text-white small-text ion-text-center ion-no-margin ion-no-padding">100.000000</h6>
+                 </ion-col>
+                 <ion-col size="4" class="ion-text-right">
+                     <h6 class="text-white small-text ion-text-right ion-no-margin ion-no-padding">09/17/2020</h6>
+                     <h6 class="small-text3 ion-text-right ion-no-margin ion-no-padding">11:18PM</h6>
+                 </ion-col>  
+                 <ion-col size="4" class="ion-text-center">
+                    <h6 class="small-text ion-text-center ion-no-margin ion-no-padding">--</h6>
+                 </ion-col>                             
+                <ion-col size="4" class="ion-text-center">
+                     <h6 class="text-white small-text ion-text-center ion-no-margin ion-no-padding">100.000000</h6>
+                 </ion-col>
+                 <ion-col size="4" class="ion-text-right">
+                     <h6 class="text-white small-text ion-text-right ion-no-margin ion-no-padding">09/17/2020</h6>
+                     <h6 class="small-text3 ion-text-right ion-no-margin ion-no-padding">11:18PM</h6>
+                 </ion-col>  
+                 <ion-col size="4" class="ion-text-center">
+                    <h6 class="small-text ion-text-center ion-no-margin ion-no-padding">--</h6>
+                 </ion-col>                             
+            </ion-row>                       
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>
+

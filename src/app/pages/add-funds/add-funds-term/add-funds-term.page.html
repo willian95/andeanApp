@@ -22,32 +22,32 @@
       </ion-row>
    </ion-grid>
 </ion-content>
-   <ion-toolbar>
+<ion-toolbar>
    <ion-tabs>
       <ion-tab-bar slot="bottom">
          <ion-tab-button tab="cartera" (click)="wallet()">
-            <ion-icon name="wallet-sharp"></ion-icon>
-            <ion-label>Cartera</ion-label>
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
          </ion-tab-button>
          <ion-tab-button tab="tarjetas" (click)="selectCard()">
-            <ion-icon name="card-sharp"></ion-icon>
-            <ion-label>Tarjetas</ion-label>
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="enviar">
-            <ion-icon name="swap-horizontal-sharp"></ion-icon>
-            <ion-label>Enviar</ion-label>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="fondos">
-            <ion-icon name="add-circle-sharp"></ion-icon>
-            <ion-label>Añadir Fondos</ion-label>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="mas">
-            <ion-icon name="list"></ion-icon>
-            <ion-label>Más</ion-label>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
          </ion-tab-button>
       </ion-tab-bar>
    </ion-tabs>
-  </ion-toolbar>
+</ion-toolbar>
 
 
 

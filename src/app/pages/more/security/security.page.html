@@ -1,0 +1,66 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Seguridad de la Cuenta</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="12">
+            <ion-item color="transparent" lines="none">
+               <ion-img [src]="'../../../assets/icono-1.png'" slot="start" style="width:9%;"></ion-img>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Usar Face ID para iniciar sesion</h2>
+               </ion-label>
+               <ion-toggle color="success" slot="end"></ion-toggle>
+            </ion-item>
+            <ion-item color="transparent" lines="none" (click)="changeMail()">
+               <ion-icon name="mail-sharp" slot="start" class="icon-32 text-white"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Cambiar correo electrónico</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none" (click)="twoStepVerification()">
+               <ion-img [src]="'../../../assets/icono-2.png'" slot="start" style="width:9%;"></ion-img>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Verificación en dos pasos</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none">
+               <ion-icon name="lock-open-sharp" class="icon-32 text-white" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Auto Bloqueo</h2>
+               </ion-label>
+               <ion-toggle color="success" slot="end"></ion-toggle>
+            </ion-item>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>
+

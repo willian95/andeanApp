@@ -11,10 +11,14 @@ ion-label {
     color: #fff !important;
 }
 
+ion-button{
+   --color: #fff !important;
+    color: #fff !important;
+}
+
 ion-input {
     color: #fff;
     font-size: 0.8rem;
-
 }
 
 ion-select {
@@ -22,7 +26,7 @@ ion-select {
 }
 
 .small-text {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #fff;
 }
 
@@ -30,6 +34,15 @@ ion-select {
 .small-text2 {
     font-size: 0.7rem;
     color: gray;
+}
+
+.small-text3 {
+  font-size: 0.8rem;
+  color: #fff;
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  z-index: 9999;
 }
 
 ion-item {
@@ -107,4 +120,18 @@ ion-item {
 :host(.item-interactive.ion-touched.ion-invalid) {
     --full-highlight-height: 0;
     --inset-highlight-height: 0;
+}
+
+.input {
+    background-color: dimgray;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: justify;
+    color: honeydew;
+    height: 33px;
+    padding-left: 6px;
+}
+
+.height-item{
+   height: 33px;
 }
