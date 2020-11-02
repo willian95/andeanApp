@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./send-currency.page.scss'],
 })
 export class SendCurrencyPage implements OnInit {
+  
   typeCurrency: any = 1
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -19,15 +21,33 @@ export class SendCurrencyPage implements OnInit {
 
   }
 
-   wallet() {
+  wallet() {
 
     this.router.navigateByUrl('/wallet');
 
   }
 
-  card() {
+  selectCard() {
 
-    this.router.navigateByUrl('/card');
+    this.router.navigateByUrl('/select-card');
+
+  }
+
+  sendCurrency() {
+
+    this.router.navigateByUrl('/send-currency');
+
+  }
+
+  addFunds() {
+
+    this.router.navigateByUrl('/add-funds');
+
+  }
+
+  more() {
+
+    this.router.navigateByUrl('/more');
 
   }
 

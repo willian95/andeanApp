@@ -11,25 +11,35 @@ ion-label {
     color: #fff !important;
 }
 
-.small-text {
-    font-size: 1rem;
+ion-button {
+    --color: #fff !important;
+    color: #fff !important;
+}
+
+ion-input {
     color: #fff;
 }
 
+ion-select {
+    color: white !important;
+}
+.small-text {
+    font-size: 0.8rem;
+    color: #fff;
+}
 
 .small-text2 {
     font-size: 1rem;
+    color: rgb(145, 145, 145);
+}
+
+.small-text3 {
+    font-size: 0.8rem;
     color: gray;
 }
 
-ion-item {
-    background-color: rgb(24, 34, 46);
-    cursor: pointer;
-}
-
-
 .ion-margin-top {
-    margin-top: 45px;
+    margin-top: 5px;
 }
 
 .icon-32 {
@@ -62,4 +72,24 @@ ion-item {
 	display: block;
 }
 
+.background-color-success {
+    background-color: #199c36;
+}
 
+.background-color-medium3{
+  background-color: #4c5258;
+}
+
+.point{
+    margin-top: 25%;
+    margin-left: 7%;
+}
+
+.border-money{
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;;
+}
+
+.border-destiny {
+    border-bottom-right-radius: 20px;
+}

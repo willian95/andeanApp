@@ -60,7 +60,13 @@ export class MorePage implements OnInit {
 
     this.router.navigateByUrl('/convert');
 
-  }  
+  } 
+
+  yourBalance() {
+
+    this.router.navigateByUrl('/your-balance');
+
+  }
 
 
 }

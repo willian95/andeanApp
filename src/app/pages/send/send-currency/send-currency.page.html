@@ -16,31 +16,81 @@
             <div class="active" *ngIf="typeCurrency == 2"></div>
             <div class="inactive" *ngIf="typeCurrency != 2"></div>
          </ion-col>
+         <ion-col size="10">
+            <ion-row class="ion-justify-content-center background-color-medium3 border-destiny">
+               <ion-col size="8" >
+              <ion-item color="medium3" lines="none">
+               <ion-label position="stacked" class="small-text2">
+                  <span class="small-text2" *ngIf="typeCurrency != 1">Envias</span>
+                  <span class="small-text2" *ngIf="typeCurrency != 2">Destinatario recibira</span>
+               </ion-label>
+               <ion-input color="light"  type="number" placeholder="100.000" maxlength="12"></ion-input>
+            </ion-item>
+               </ion-col>
+             <ion-col size="4"  class="ion-no-margin ion-no-padding background-color-success border-money"> 
+                  <h1 *ngIf="typeCurrency != 1" color="success" class="ion-text-center point text-white">CLP</h1>
+                  <h1 *ngIf="typeCurrency != 2" color="success" class="ion-text-center point text-white">USB</h1>
+             </ion-col>
+            </ion-row>
+         </ion-col>
+         <ion-col size="10">
+            <h5 class="small-text3 ion-no-padding ion-no-margin" *ngIf="typeCurrency != 1">3,95 CLP <span class="small-text">Transferencia de bajo costo</span></h5>
+            <h5 class="small-text3 ion-no-padding ion-no-margin" *ngIf="typeCurrency != 1">96,05 <span class="small-text">Importe de CLP convertido</span></h5>
+            <h5 class="small-text3 ion-no-padding ion-no-margin" *ngIf="typeCurrency != 1">775 <span class="small-text">Tipo de cambio</span></h5>
+            <h5 class="small-text3 ion-no-padding ion-no-margin" *ngIf="typeCurrency != 2">5,34 USD <span class="small-text">Comisión "wine" Internacional</span></h5>
+            <h5 class="small-text3 ion-no-padding ion-no-margin" *ngIf="typeCurrency != 2">1,16 <span class="small-text">Nuestra Comisión</span></h5>
+            <h5 class="small-text ion-no-padding ion-no-margin" *ngIf="typeCurrency != 2">6,47 USD Comisión Total</h5>
+         </ion-col>
+         <ion-col size="10">
+            <ion-row class="ion-justify-content-center background-color-medium3 border-destiny">
+               <ion-col size="8" >
+              <ion-item color="medium3" lines="none">
+               <ion-label position="stacked" class="small-text2">
+                  <span class="small-text2" *ngIf="typeCurrency != 1">Recibes</span>
+                  <span class="small-text2" *ngIf="typeCurrency != 2">Envias</span>
+               </ion-label>
+               <ion-input color="light"  type="number" placeholder="100.000" maxlength="12"></ion-input>
+            </ion-item>
+               </ion-col>
+             <ion-col size="4"  class="ion-no-margin ion-no-padding background-color-success border-money"> 
+                  <h1 color="success" class="ion-text-center text-white point">USB</h1>
+             </ion-col>
+            </ion-row>
+         </ion-col>
+         <ion-col size="10">
+            <h5 class="small-text3 ion-no-padding ion-no-margin">Debe llegar para el <span class="small-text">12 de Mayo</span></h5>
+         </ion-col>
+         <ion-col size="10" class="ion-margin-top">
+            <ion-button class="ion-text-capitalize" size="small" expand="block" color="success">
+               Prioridad
+            </ion-button>
+         </ion-col>
       </ion-row>
    </ion-grid>
+</ion-content>
+<ion-toolbar>
    <ion-tabs>
       <ion-tab-bar slot="bottom">
          <ion-tab-button tab="cartera" (click)="wallet()">
-            <ion-icon name="wallet-sharp"></ion-icon>
-            <ion-label>Cartera</ion-label>
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
          </ion-tab-button>
          <ion-tab-button tab="tarjetas" (click)="selectCard()">
-            <ion-icon name="card-sharp"></ion-icon>
-            <ion-label>Tarjetas</ion-label>
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="enviar">
-            <ion-icon name="swap-horizontal-sharp"></ion-icon>
-            <ion-label>Enviar</ion-label>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="fondos">
-            <ion-icon name="add-circle-sharp"></ion-icon>
-            <ion-label>Añadir Fondos</ion-label>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
          </ion-tab-button>
-         <ion-tab-button tab="mas">
-            <ion-icon name="list"></ion-icon>
-            <ion-label>Más</ion-label>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
          </ion-tab-button>
       </ion-tab-bar>
    </ion-tabs>
-</ion-content>
-
+</ion-toolbar>
