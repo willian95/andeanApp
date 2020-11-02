@@ -223,6 +223,10 @@ const routes: Routes = [
     path: 'convert',
     loadChildren: () => import('./pages/more/convert/convert.module').then( m => m.ConvertPageModule)
   },
+  {
+    path: 'easy-access',
+    loadChildren: () => import('./pages/easy-access/easy-access.module').then( m => m.EasyAccessPageModule)
+  },
 
 
 ];
