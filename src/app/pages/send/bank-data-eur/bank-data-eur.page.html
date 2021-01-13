@@ -1,0 +1,76 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">EUR</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10" class="ion-margin-top-5">
+            <ion-item id="country-item" color="transparent" class="border-bottom-white">
+               <ion-label color="light">País Banco Destinatario</ion-label>
+               <ion-select color="light" [(ngModel)]="country" cancelText="Cancelar">
+               <ion-select-option value="{{country.id}}" *ngFor="let country of countries">{{ country.name }}</ion-select-option>
+               </ion-select>
+            </ion-item>
+            <ion-item id="country-item" color="transparent" class="border-bottom-white">
+               <ion-label color="light">Nombre del Banco</ion-label>
+               <ion-select color="light">
+                  <ion-select-option value="1" checked="true">Banco 1</ion-select-option>
+                  <ion-select-option value="2" checked="true">Banco 2</ion-select-option>
+               </ion-select>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Swift / Bic</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Dirección del Banco</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+            <ion-item id="country-item" color="transparent" class="border-bottom-white">
+               <ion-label color="light">Ciudad</ion-label>
+               <ion-select color="light">
+                  <ion-select-option value="1" checked="true">Ciudad 1</ion-select-option>
+                  <ion-select-option value="2" checked="true">Ciudad 2</ion-select-option>
+               </ion-select>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <ion-label position="floating">Iban / Número de cuenta</ion-label>
+               <ion-input></ion-input>
+            </ion-item>
+         </ion-col>
+         <ion-col size="10" class="position-buttom">
+            <ion-button class="ion-text-capitalize ion-activatable ripple-parent" size="small" expand="block" color="success">
+               Continuar
+               <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-content>
+

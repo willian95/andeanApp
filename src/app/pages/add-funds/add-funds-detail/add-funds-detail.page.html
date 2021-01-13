@@ -1,0 +1,72 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Añadir Fondos</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="9" class="ion-text-justify ion-no-margin ion-no-padding">
+            <ion-item color="transparent" class="border-bottom-white">
+               <h6 class="small-text2">Banco: <b class="small-text">Banco de Chile</b></h6>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white on-no-margin ion-no-padding">
+               <h6 class="small-text">Andrean Wide transfer Spa</h6>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white on-no-margin ion-no-padding">
+               <h6 class="small-text2">Rut: <b class="small-text">77.097.311-K</b></h6>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white on-no-margin ion-no-padding">
+               <h6 class="small-text2">Tipo de cuenta: <b class="small-text">Corriente</b></h6>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white">
+               <h6 class="small-text2">Número de cuenta: <b class="small-text">51445900</b></h6>
+            </ion-item>
+            <ion-item color="transparent" class="border-bottom-white on-no-margin ion-no-padding">
+               <h6 class="small-text2">Correo: <b class="small-text">contacto@andreanwide.com</b></h6>
+            </ion-item>
+            <ion-item color="transparent" class="ion-no-margin ion-no-padding">
+               <h6 class="small-text2">Referencia: <b class="small-text">XCHMFGNXFGN</b></h6>
+            </ion-item>
+         </ion-col> 
+         <ion-col size="9"  class="ion-no-margin ion-no-padding">
+            <ion-item color="transparent" class="ion-no-margin ion-no-padding">
+               <h6 class="small-text2 ion-text-justify ion-no-margin ion-no-padding">Nota: Recuerda colocar la referencia en la descrición de tu trasferencia. Si no lo haces, el registo de tu pago podria tardar</h6>
+            </ion-item>
+         </ion-col>
+         <ion-col size="10" class="position-buttom">
+            <ion-button size="small" expand="block" color="success" (click)="addFundsBankTransfer()">
+               <h6 class="small-text">Confirmar</h6>
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>
+
+

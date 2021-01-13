@@ -1,0 +1,55 @@
+<ion-header>
+   <ion-toolbar class="fullheight xc">
+         <ion-title class="text-white ion-text-center fullheight xc"> 
+               <ion-img [src]="'../../../assets/Logo.png'" class="img ion-text-center"></ion-img>
+         </ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content class="watermark">
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10" class="ion-text-center">
+               <h6 class="small-text2">Número de cuenta: <b class="small-text">514459</b></h6>
+               <h6 class="small-text">Jóse Chavez Cuba</h6>
+               <h6 class="small-text2">Fecha: <b class="small-text">17/09/2020</b></h6>
+               <h6 class="small-text2">Ordenante / Receptor: <b class="small-text">Manuel Fernadez</b></h6>
+               <h6 class="small-text2">Número de cuenta: <b class="small-text">51445900</b></h6>
+               <h6 class="small-text2">Referencia: <b class="small-text">Pago cuenta escuela</b></h6>
+               <h6 class="small-text2">Importe: <b class="small-text">75 USD</b></h6>
+         </ion-col>    
+         <ion-col size="10" class="ion-margin-top">
+            <ion-button class="ion-text-capitalize" size="small" expand="block" color="success" (click)="payYourTransfer()">
+              <ion-icon name="share-social-sharp" class="text-white" slot="start"></ion-icon>
+               Compartir
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+   <ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+  </ion-toolbar>
+

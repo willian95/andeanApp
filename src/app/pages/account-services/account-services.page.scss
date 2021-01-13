@@ -1,0 +1,105 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
+ion-label {
+
+    --color: #fff !important;
+
+    color: #fff !important;
+}
+
+.small-text {
+
+    font-size: 12px;
+
+    color: gray;
+}
+
+
+
+ion-item {
+
+    background-color: rgb(24, 34, 46);
+
+    cursor: pointer;
+
+}
+
+ion-item:hover {
+
+    background-color: rgb(28, 40, 55);
+
+
+}
+
+ion-icon {
+    font-size: 32px;
+}
+
+.text-white {
+
+    color: #fff;
+
+}
+
+.circulo1 {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: 3px solid rgb(120, 185, 133);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+    padding: 0.3%
+}
+
+.circulo2 {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: rgb(165, 165, 165);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.circulo2>h2 {
+    color: rgb(71, 71, 71);
+    font-size: 3rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20%;
+    text-transform: uppercase;
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.text-success2{
+  color: rgb(120, 185, 133);
+}
+
+.icon-15 {
+    font-size: 15px;
+}
+

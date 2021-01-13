@@ -72,3 +72,56 @@ ion-alert {
 .picker-button.sc-ion-picker-md, .picker-button.activated.sc-ion-picker-md {
   color: #22b573;
 }
+
+.ion-color-primary2 {
+  --ion-color-base: var(--ion-color-primary2) !important;
+  --ion-color-base-rgb: var(--ion-color-primary2-rgb) !important;
+  --ion-color-contrast: var(--ion-color-primary2-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary2-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-primary2-shade) !important;
+  --ion-color-tint: var(--ion-color-primary2-tint) !important;
+}
+
+.ion-color-primary2 {
+  --ion-color-base: var(--ion-color-primary2) !important;
+  --ion-color-base-rgb: var(--ion-color-primary2-rgb) !important;
+  --ion-color-contrast: var(--ion-color-primary2-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary2-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-primary2-shade) !important;
+  --ion-color-tint: var(--ion-color-primary2-tint) !important;
+}
+
+.ion-color-medium2 {
+  --ion-color-base: var(--ion-color-medium2) !important;
+  --ion-color-base-rgb: var(--ion-color-medium2-rgb) !important;
+  --ion-color-contrast: var(--ion-color-medium2-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-medium2-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-medium2-shade) !important;
+  --ion-color-tint: var(--ion-color-medium2-tint) !important;
+}
+
+.ion-color-medium3 {
+  --ion-color-base: var(--ion-color-medium3) !important;
+  --ion-color-base-rgb: var(--ion-color-medium3-rgb) !important;
+  --ion-color-contrast: var(--ion-color-medium3-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-medium3-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-medium3-shade) !important;
+  --ion-color-tint: var(--ion-color-medium3-tint) !important;
+}
+.ion-color-success2 {
+  --ion-color-base: var(--ion-color-success2) !important;
+  --ion-color-base-rgb: var(--ion-color-success2-rgb) !important;
+  --ion-color-contrast: var(--ion-color-success2-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-success2-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-success2-shade) !important;
+  --ion-color-tint: var(--ion-color-success2-tint) !important;
+}
+
+.ion-color-transparent {
+  --ion-color-base: var(--ion-color-transparent) !important;
+  --ion-color-base-rgb: var(--ion-color-transparent-rgb) !important;
+  --ion-color-contrast: var(--ion-color-transparent-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-transparent-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-transparent-shade) !important;
+  --ion-color-tint: var(--ion-color-transparent-tint) !important;
+}

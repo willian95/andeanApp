@@ -1,0 +1,120 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Convertir moneda</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="11">
+           <ion-item color="transparent" lines="none">
+            <ion-label position="stacked" class="small-text">De la moneda</ion-label>
+            <ion-select color="light" class="input">
+              <ion-select-option value="USD" checked="true">USD</ion-select-option>
+            </ion-select>
+            </ion-item>
+         </ion-col>
+          <ion-col size="11" class="ion-text-center fullheight xc ion-no-margin ion-no-padding">
+              <ion-icon name="sync-sharp" class="icon-32 text-white ion-no-margin ion-no-padding"></ion-icon>
+          </ion-col>
+         <ion-col size="11"  class="ion-no-margin ion-no-padding">
+           <ion-item color="transparent" lines="none">
+            <ion-label position="stacked" class="small-text">A la moneda</ion-label>
+            <ion-select color="light" class="input">
+              <ion-select-option value="CLP" checked="true">CLP</ion-select-option>
+            </ion-select>
+            </ion-item>
+         </ion-col>
+         <ion-col size="11">
+            <ion-row class="ion-justify-content-center border-bottom-white">
+                 <ion-col size="6">
+            <ion-item color="transparent" lines="none" >
+               <ion-label position="stacked" class="small-text">Cantidad</ion-label>
+                <ion-input color="light"  type="number" placeholder="100.000" maxlength="12"></ion-input>
+            </ion-item>
+                 </ion-col>
+                 <ion-col size="3">
+            <ion-item color="transparent" lines="none">
+               <ion-label position="stacked" class="small-text4">
+                  <span class="small-text4">MAX</span>
+               </ion-label>
+                <h6 class="small-text2 ion-no-margin ion-no-padding ion-margin-bottom-10">CLP</h6>
+            </ion-item>
+                 </ion-col>
+                                  <ion-col size="3">
+            <ion-item color="transparent" lines="none">
+               <ion-label position="stacked" class="small-text4">
+                  <span class="small-text4">MAX</span>
+               </ion-label>
+           <span class="max ion-margin-bottom-10">MAX</span>
+            </ion-item>
+                 </ion-col>
+            </ion-row>
+         </ion-col>
+         <ion-col size="11" class="">
+             <ion-row class="ion-justify-content-center detail">
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-right">
+                    <h6 class="small-text2 ion-no-margin ion-no-padding">Costo: </h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-left">
+                    <h6 class="small-text ion-no-margin ion-no-padding">100.000 CLP</h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-right">
+                    <h6 class="small-text2 ion-no-margin ion-no-padding">Precio USD: </h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-left">
+                    <h6 class="small-text ion-no-margin ion-no-padding">775 USD</h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-right">
+                    <h6 class="small-text2 ion-no-margin ion-no-padding">Tarifa: </h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-left">
+                    <h6 class="small-text ion-no-margin ion-no-padding">0.000000 CLP</h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-right">
+                    <h6 class="small-text2 ion-no-margin ion-no-padding">Total USD a recibir: </h6>
+                </ion-col>
+                <ion-col size="6" class="ion-no-margin ion-no-padding ion-text-left">
+                    <h6 class="small-text ion-no-margin ion-no-padding">75 USD</h6>
+                </ion-col>
+             </ion-row>
+         </ion-col>
+         <ion-col size="11">
+            <ion-button size="large" expand="block" color="success">
+               <h6 class="small-text">Conversión Exitosa</h6>
+            </ion-button>
+         </ion-col>
+        <ion-col size="11" class="position-buttom">
+            <ion-button size="small" expand="block" color="success">
+               <h6 class="small-text">Convertir</h6>
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>

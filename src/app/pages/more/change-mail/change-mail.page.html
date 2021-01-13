@@ -1,0 +1,56 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Seguridad de la Cuenta</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <h5 class="text-white small-text ion-text-center">Cambiar correo electrónico</h5>
+         </ion-col>
+         <ion-col size="10">
+            <ion-item color="transparent" lines="none">
+               <ion-input color="light"  class="input" placeholder=" Indicar email"></ion-input>
+            </ion-item>
+         </ion-col>
+         <ion-col size="9" class="ion-no-margin ion-no-padding">
+            <h5 class="text-white small-text ion-text-justify">¿Necesitas cambiar el email?</h5>
+         </ion-col>
+         <ion-col size="9" class="ion-no-margin ion-no-padding">
+            <h5 class="small-text2 ion-text-justify ion-no-margin ion-no-padding">No hay problema, escribe uno nuevo arriba. Para mantener tu cuenta segura, tendrás que pasar la autenticación y así confirmar que eres tú.</h5>
+         </ion-col>
+         <ion-col size="10" class="position-buttom">
+            <ion-button class="ion-text-capitalize" size="small" expand="block" color="success">
+               Continuar
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>

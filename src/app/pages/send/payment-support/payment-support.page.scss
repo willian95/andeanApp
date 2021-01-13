@@ -1,0 +1,115 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
+ion-label {
+    --color: gray !important;
+    color: gray !important;
+}
+
+ion-input {
+    color: #fff;
+    font-size: 0.8rem;
+
+}
+
+ion-select {
+    color: white !important;
+}
+
+.small-text {
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+
+.small-text2 {
+    font-size: 0.7rem;
+    color: gray;
+}
+
+ion-item {
+    background-color: rgb(24, 34, 46);
+    cursor: pointer;
+}
+
+
+.ion-margin-top {
+    margin-top: 5px;
+}
+
+.icon-32 {
+    font-size: 32px;
+}
+
+.text-white {
+
+    color: #fff;
+
+}
+
+.fullheight {
+    height: 100%;
+}
+
+.xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img {
+    position: relative;
+    left: 35%;
+    width: 35%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-bottom-white {
+    border-bottom: 1px solid #fff;
+}
+
+.margin-inputs {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+
+.position-buttom {
+    position: fixed;
+    top: 84%;
+}
+
+.ion-margin-top-5 {
+    margin-top: 10px;
+}
+
+.watermark {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+}
+
+.watermark:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    opacity: 0.1;
+    background-image: url('../../../../assets/Logo.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0 50%;
+    background-size: 100%;
+}
+

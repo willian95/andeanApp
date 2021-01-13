@@ -10,7 +10,10 @@ import { ErrorExtractorService } from '../services/error-extractor.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  public slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
   url:any
   constructor(private router: Router, private urlService: UrlService, private http: HttpClient, private errorExtractService: ErrorExtractorService, private navCtrl: NavController) {
     this.url = this.urlService.getUrl()

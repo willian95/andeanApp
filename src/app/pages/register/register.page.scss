@@ -33,13 +33,29 @@ p{
 }
 
 ion-content{
-    --ion-background-color: #22b573;
+    --ion-background-color: #18222e;
 }
 
 ion-header{
-    --ion-background-color: #22b573;
+    --ion-background-color: #18222e;
 }
 
 ion-select{
     color: white !important;
+}
+
+.active {
+    height: 5px;
+    width: 100%;
+    background-color: #199c36;
+}
+
+.inactive {
+    height: 5px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.text-white{
+    color:#fff;
 }

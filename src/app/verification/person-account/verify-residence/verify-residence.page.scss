@@ -1,0 +1,48 @@
+ion-content {
+    --ion-background-color: #18222e;
+}
+
+ion-header {
+    --ion-background-color: #18222e;
+}
+
+ion-label {
+
+    --color: #fff !important;
+
+    color: #fff !important;
+}
+
+.small-text {
+
+    font-size: 12px;
+
+    color: gray;
+}
+
+
+
+ion-item {
+
+    background-color: rgb(24, 34, 46);
+
+    cursor: pointer;
+
+}
+
+ion-item:hover {
+
+    background-color: rgb(28, 40, 55);
+
+
+}
+
+ion-icon {
+    font-size: 32px;
+}
+
+.text-white {
+
+    color: #fff;
+
+}

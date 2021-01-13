@@ -1,0 +1,180 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-button slot="start"  color="transparent" fill="clear">
+         <h5 slot="start" class="text-white ion-text-capitalize">Historia</h5>       
+      </ion-button>
+      <ion-title class="text-white ion-text-center">Cartera</ion-title>
+     <ion-button slot="end"  color="transparent" fill="clear" (click)="accountServices()">
+      <ion-icon name="person-sharp" class="text-white"></ion-icon>
+     </ion-button>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-slides class="ion-margin-top" pager="true" [options]="slideOpts">
+      <ion-slide class="ion-no-margin ion-no-padding ">
+        <div class="balance1">
+          <ion-row class="ion-justify-content-center" >
+              <ion-col size="10" class="ion-no-margin text-white">
+                 <h6 class="ion-no-margin text-white ion-text-justify">
+                   CLP Balance
+                 </h6>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                <h3 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   $ 0.00
+                </h3>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                 <h6 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   $ 0.00 Disponible
+                 </h6>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                  <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="success2">Deposito</ion-button>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                   <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="success2">Retiro</ion-button>
+              </ion-col>
+          </ion-row>
+          <div class="circulo"></div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="balance2">
+          <ion-row class="ion-justify-content-center" >
+              <ion-col size="10" class="ion-no-margin text-white">
+                 <h6 class="ion-no-margin text-white ion-text-justify">
+                   USD Balance
+                 </h6>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                <h3 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   $ 0.00
+                </h3>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                 <h6 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   $ 0.00 Disponible
+                 </h6>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                  <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="primary2">Deposito</ion-button>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                   <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="primary2">Retiro</ion-button>
+              </ion-col>
+          </ion-row>
+          <div class="circulo2"></div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="balance3">
+          <ion-row class="ion-justify-content-center" >
+              <ion-col size="10" class="ion-no-margin text-white">
+                 <h6 class="ion-no-margin text-white ion-text-justify">
+                   EUR Balance
+                 </h6>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                <h3 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   € 0.00
+                </h3>
+              </ion-col>
+              <ion-col size="10" class="ion-no-margin  text-white">
+                 <h6 class="ion-no-margin ion-no-padding text-white ion-text-justify">
+                   $ 0.00 Disponible
+                 </h6>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                  <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="medium2">Deposito</ion-button>
+              </ion-col>
+              <ion-col size="5" class="ion-no-margin">
+                   <ion-button  class="ion-no-margin  ion-no-padding ion-text-capitalize" size="small" expand="block" color="medium2">Retiro</ion-button>
+              </ion-col>
+          </ion-row>
+          <div class="circulo3"></div>
+        </div>
+      </ion-slide>
+   </ion-slides>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10">
+            <h6 class="text-white ion-no-margin ion-no-padding">
+              Transacciones
+            </h6>
+         </ion-col>
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <ion-row class="ion-justify-content-center ion-no-margin ion-no-padding">
+           <ion-col size="4">
+            <h6 class="small-text ion-no-margin ion-no-padding ion-text-justify">
+              Cantidad
+            </h6>
+         </ion-col>  
+         <ion-col size="4">
+            <h6 class="small-text ion-no-margin ion-no-padding ion-text-center">
+              Fecha
+            </h6>
+         </ion-col>
+         <ion-col size="4">
+            <h6 class="small-text ion-no-margin ion-no-padding ion-text-center">
+              Estatus
+            </h6>
+         </ion-col> 
+            </ion-row>
+         </ion-col>
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <ion-row class="ion-justify-content-center ion-no-margin ion-no-padding">
+         <ion-col size="4" class="ion-no-margin ion-no-padding">
+            <h3 class="small-text2 ion-no-margin ion-no-padding ion-text-justify">
+              100.000000
+            </h3>
+         </ion-col>  
+         <ion-col size="4" class="ion-no-margin ion-no-padding">
+            <h3 class="small-text2 ion-no-margin ion-no-padding ion-text-right">
+              09/17/2020
+            </h3>
+            <h3 class="small-text3 ion-no-margin ion-no-padding ion-text-right">
+              11:18PM
+            </h3>
+         </ion-col>
+         <ion-col size="4" class="ion-no-margin ion-no-padding">
+            <h3 class="small-text2 ion-no-margin ion-no-padding ion-text-center">
+              --
+            </h3>
+         </ion-col>  		
+            </ion-row>
+         </ion-col>         
+         <ion-col size="10" style="position:absolute; top: 80%;">
+            <ion-button class="ion-text-capitalize ion-activatable ripple-parent" size="small" expand="block" color="success">
+               Convertir
+               <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-content>
+

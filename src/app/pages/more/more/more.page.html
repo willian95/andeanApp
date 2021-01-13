@@ -1,0 +1,83 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Más</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="12">
+            <ion-item color="transparent" lines="none">
+               <ion-icon name="checkmark-sharp" slot="start" class="icon-32 text-white"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Verificar Cuenta</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item color="transparent" lines="none" (click)="record()">
+               <ion-icon name="reader-sharp" slot="start" class="icon-32 text-white"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Historial</h2>
+               </ion-label>
+               <ion-icon name="caret-down-sharp" slot="end" class="text-white"></ion-icon>
+            </ion-item>
+            <ion-item  color="transparent" lines="none" (click)="security()">
+               <ion-icon name="lock-closed-sharp"  slot="start" class="icon-32 text-white"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Seguridad de la Cuenta</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none" (click)="convert()">
+               <ion-icon name="sync-sharp" class="icon-32 text-white" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Convertir</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none" (click)="yourBalance()">
+               <ion-icon class="icon-32" name="add-circle-sharp" color="success" slot="start"></ion-icon>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Abrir Balance</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none">
+               <ion-img [src]="'../../../assets/acuerdo.svg'" slot="start" style="width:9%;"></ion-img>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Terminos y Condiciones</h2>
+               </ion-label>
+            </ion-item>
+            <ion-item  color="transparent" lines="none">
+               <ion-img [src]="'../../../assets/archivo.svg'" slot="start" style="width:9%;"></ion-img>
+               <ion-label class="ion-text-wrap">
+                  <h2 class="text-white">Politicas de Privacidad</h2>
+               </ion-label>
+            </ion-item>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>
+

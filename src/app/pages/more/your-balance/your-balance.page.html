@@ -1,0 +1,58 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Tu balance</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10" class="ion-no-margin ion-no-padding">
+            <h5 class="text-white small-text ion-text-center">Elige un balance para abrir</h5>
+         </ion-col>
+         <ion-col size="10">
+            <ion-item color="transparent" lines="none" style="width: 100%;">
+            <ion-select color="light" [(ngModel)]="balance" class="input">
+               <ion-select-option value="1" checked="true">Dólar Estadounidense</ion-select-option>
+               <ion-select-option value="2"> Peso Chileno</ion-select-option>
+            </ion-select>            
+          </ion-item>
+         </ion-col>
+         <ion-col size="9" class="ion-no-margin ion-no-padding">
+            <h5 class="small-text2 ion-text-center ion-no-margin ion-no-padding" *ngIf="balance == 1">Con tu balance en USD Podrás convertir y ahorrar tu dinero en Dólares, también podrás hacer pagos en USD sin sufrir malo tipos se cambios</h5>
+            <h5 class="small-text2 ion-text-center ion-no-margin ion-no-padding" *ngIf="balance == 2">Con tu Balance CLP podrás realizar pagos de servicios, pagar tus transferencias internacionales, y lo mejor podrás hacer conversión se monedas.</h5>
+         </ion-col>
+         <ion-col size="10">
+            <ion-button class="ion-text-capitalize" size="small" expand="block" color="success">
+               Abrir
+            </ion-button>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+<ion-toolbar>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar" (click)="sendCurrency()">
+            <ion-icon name="swap-horizontal-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos" (click)="addFunds()">
+            <ion-icon name="add-circle-sharp" class="text-white"></ion-icon>
+            <ion-label class="text-white">Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas" (click)="more()">
+            <ion-icon name="list" class="text-white"></ion-icon>
+            <ion-label class="text-white">Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-toolbar>
+

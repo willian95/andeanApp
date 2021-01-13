@@ -1,0 +1,45 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title class="text-white ion-text-center">Tarjetas</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+   <ion-grid>
+      <ion-row class="ion-justify-content-center">
+         <ion-col size="10">
+            <h6 class="ion-text-center ion-no-padding text-white">MUY PRONTO</h6>
+         </ion-col>
+         <ion-col size="10" class="fullheight xc">
+             <ion-img [src]="'../../../../assets/CardandeanWide.png'" class="img"></ion-img>
+         </ion-col>
+         <ion-col size="10">
+            <h6 class="ion-text-center ion-no-padding small-text2">Tarjeta Andrean Wide</h6>
+         </ion-col>
+
+      </ion-row>
+   </ion-grid>
+   <ion-tabs>
+      <ion-tab-bar slot="bottom">
+         <ion-tab-button tab="cartera" (click)="wallet()">
+            <ion-icon name="wallet-sharp"></ion-icon>
+            <ion-label>Cartera</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="tarjetas" (click)="selectCard()">
+            <ion-icon name="card-sharp"></ion-icon>
+            <ion-label>Tarjetas</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="enviar">
+            <ion-icon name="swap-horizontal-sharp"></ion-icon>
+            <ion-label>Enviar</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="fondos">
+            <ion-icon name="add-circle-sharp"></ion-icon>
+            <ion-label>Añadir Fondos</ion-label>
+         </ion-tab-button>
+         <ion-tab-button tab="mas">
+            <ion-icon name="list"></ion-icon>
+            <ion-label>Más</ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+   </ion-tabs>
+</ion-content>
