@@ -58,8 +58,8 @@ export class RegisterPage implements OnInit {
     await this.loading.present();
   }
 
-  async dimissLoading(){
-    await this.loading.dismiss();
+  dimissLoading(){
+    this.loading.dismiss();
     
   }
 

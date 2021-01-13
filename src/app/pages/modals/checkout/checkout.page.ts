@@ -5,8 +5,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { UrlService } from '../../../services/url.service';
 import { ErrorExtractorService } from '../../../services/error-extractor.service';
 import { NavController } from '@ionic/angular';
-import { Base64 } from '@ionic-native/base64/ngx';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 var checkLoad; 
 
@@ -18,8 +16,10 @@ var checkLoad;
 export class CheckoutPage implements OnInit {
 
   image:any = null
+  showImage:any = null
   transaction_number:any = null
   transaction_date:any = null
+  show_payment_amount:any = "0,00"
   payment_amount:any = 0
   url:any
   reason:any
@@ -33,7 +33,7 @@ export class CheckoutPage implements OnInit {
   recipientId:any
   loading:any
 
-  constructor(public modalController: ModalController, public actionSheetController: ActionSheetController, private camera: Camera, public alertController: AlertController, private http: HttpClient, private urlService: UrlService, private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, private navCtrl: NavController, private base64: Base64, private domSanitizer:DomSanitizer) {
+  constructor(public modalController: ModalController, public actionSheetController: ActionSheetController, private camera: Camera, public alertController: AlertController, private http: HttpClient, private urlService: UrlService, private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, private navCtrl: NavController) {
     this.url = this.urlService.getUrl()
     this.orderId = window.localStorage.getItem("andean_order_id")
     this.recipientId = window.localStorage.getItem("andean_recipient_id")
@@ -53,29 +53,22 @@ export class CheckoutPage implements OnInit {
 
     var options = {
       quality: 40,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }
 
-    var _this = this
-
     this.camera.getPicture(options).then((imageData) => {
-      
-
-      _this.base64.encodeFile(imageData).then((base64File: string) => {
-        console.log(base64File);
+    
 
 
-          _this.image = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
+      this.image = 'data:image/jpeg;base64,' + imageData;
+        
 
-      }, (err) => {
-        console.log(err);
-      });
 
     
     }, (err) => {
-      console.log(err)
+      //console.log(err)
     });
   }
 
@@ -143,10 +136,17 @@ export class CheckoutPage implements OnInit {
     await this.loading.dismiss();
   }
 
+  changeAmount(){
+
+    let payment_amount = this.show_payment_amount.replaceAll(".", "")
+    this.payment_amount = parseFloat(payment_amount.replaceAll(",", "."))
+
+  }
+
   checkLoading(){
 
     checkLoad = window.setInterval(() => {
-      console.log("attach", this.attachClientDone, "payment", this.paymentDone ,"fill", this.fillDone)
+      //console.log("attach", this.attachClientDone, "payment", this.paymentDone ,"fill", this.fillDone)
       if(this.attachClientDone == true && this.paymentDone == true && this.fillDone == true){
         this.dismissLoading()
         clearInterval(checkLoad);
@@ -166,7 +166,7 @@ export class CheckoutPage implements OnInit {
 
     this.http.post(this.url+"/api/v1/orders/"+this.orderId+"/attach-recipient",{recipient_id: this.recipientId, reason: this.reason}, {headers}).subscribe((res:any) => {
       
-      console.log("attach-client", res)
+      //console.log("attach-client", res)
       this.attachClientDone = true
       this.payment()
 
@@ -185,7 +185,7 @@ export class CheckoutPage implements OnInit {
 
     this.http.post(this.url+"/api/v1/payments/app",{order_id: this.orderId, account_id: this.accountId, transaction_number: this.transaction_number, transaction_date: this.transaction_date, payment_amount: this.payment_amount, image: this.image}, {headers}).subscribe((res:any) => {
       
-      console.log("payment", res)
+      //console.log("payment", res)
       this.paymentDone = true
       this.fillOrder()
 
@@ -198,7 +198,7 @@ export class CheckoutPage implements OnInit {
 
       let string = ""
       let errors = []
-      console.log("error", errorResponse)
+      //console.log("error", errorResponse)
       if(errorResponse.error){
         if(errorResponse.error.errors){
 

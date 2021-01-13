@@ -98,7 +98,7 @@ export class CreateRecipientsPage implements OnInit {
     .subscribe((response: any) => {
 
       this.dimissLoading()
-      console.log("test-response", response)
+      //console.log("test-response", response)
       localStorage.setItem("andean_recipient_id", response.data.id)
       if(this.from == "Order"){
 

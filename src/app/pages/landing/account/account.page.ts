@@ -8,8 +8,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { UrlService } from '../../../services/url.service';
 import { ErrorExtractorService } from '../../../services/error-extractor.service';
-import { Base64 } from '@ionic-native/base64/ngx';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 declare var cordova: any;
 
@@ -38,11 +36,13 @@ export class AccountPage implements OnInit {
 
   imageRear:any = null
   imageFront:any = null
+  showImageFront:any = null
+  showImageRear:any = null
   loading:any
   token:any
   userimage:any
 
-  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, public loadingControlller: LoadingController, private transfer: FileTransfer, private file: File, private camera: Camera, public platform: Platform, private filePath: FilePath, private base64: Base64, private domSanitizer:DomSanitizer) { 
+  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, public loadingControlller: LoadingController, private transfer: FileTransfer, private file: File, private camera: Camera, public platform: Platform, private filePath: FilePath) { 
     this.url = this.urlService.getUrl()
     this.fetchCountries()
   }
@@ -222,34 +222,28 @@ export class AccountPage implements OnInit {
 
     var options = {
       quality: 40,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation:true,
       targetWidth:720
     }
-    var _this = this
+   
     this.camera.getPicture(options).then((imageData) => {
-      //let base64Image = 'data:image/jpeg;base64,' + imageData;
-      _this.base64.encodeFile(imageData).then((base64File: string) => {
-        console.log(base64File);
 
         if(imageType == "front"){
 
-          _this.imageFront = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
-  
+          this.imageFront = 'data:image/jpeg;base64,' + imageData;
+         
         }else if(imageType == "rear"){
-          _this.imageRear = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
+          this.imageRear = 'data:image/jpeg;base64,' + imageData;
+         
         }
-
-      }, (err) => {
-        console.log(err);
-      });
       
 
     
     }, (err) => {
-      console.log(err)
+      //console.log(err)
     });
   }
 

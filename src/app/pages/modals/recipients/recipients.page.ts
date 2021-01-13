@@ -24,7 +24,7 @@ export class RecipientsPage implements OnInit {
 
   constructor(public modalController: ModalController, private http: HttpClient, private urlService: UrlService, public loadingController: LoadingController) { 
     this.url = this.urlService.getUrl()
-    console.log("order_id", localStorage.getItem("andean_order_id"))
+    //console.log("order_id", localStorage.getItem("andean_order_id"))
   }
 
   ngOnInit() {
@@ -94,14 +94,18 @@ export class RecipientsPage implements OnInit {
       this.recipients = res.data
       this.nextLink =  res.links.next
       this.prevLink =  res.links.prev
-      console.log("test-recipients", this.recipients)
+      //console.log("test-recipients", this.recipients)
 
     })
     
   }
 
+  doRefresh(event){
+    this.fetchRecipients()
+  }
+
   select(id){
-    console.log("test-recipeint-id", id)
+    //console.log("test-recipeint-id", id)
     localStorage.setItem("andean_recipient_id", id)
     this.accounts()
 

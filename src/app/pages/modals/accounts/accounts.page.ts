@@ -20,7 +20,7 @@ export class AccountsPage implements OnInit {
   constructor(public modalController: ModalController, private http: HttpClient, private urlService: UrlService, public loadingController: LoadingController) { 
     this.url = this.urlService.getUrl()
     this.currency_id = localStorage.getItem("andean_currency_id")
-    console.log("test-recipient_id", localStorage.getItem("andean_recipient_id"))
+    //console.log("test-recipient_id", localStorage.getItem("andean_recipient_id"))
 
   }
 
@@ -38,7 +38,7 @@ export class AccountsPage implements OnInit {
     this.http.get(this.url+"/api/v1/accounts", {headers}).subscribe((res:any) => {
       this.dismissLoading()
       this.accounts = res.data
-      console.log("test-accounts", this.accounts)
+      //console.log("test-accounts", this.accounts)
     })
 
   }

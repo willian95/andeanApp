@@ -35,6 +35,8 @@ export class MenuPage implements OnInit {
 
     localStorage.removeItem("user")
     localStorage.removeItem("token")
+    window.localStorage.removeItem("address_verified")
+    window.localStorage.removeItem("identity_verified")
     this.router.navigateByUrl("/")
 
   }

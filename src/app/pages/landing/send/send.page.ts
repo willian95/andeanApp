@@ -40,6 +40,11 @@ export class SendPage implements OnInit {
   fetchSymbolsDone:any = true
   fetchExchangeDone:any = false
 
+  minAmount:any
+  maxAmount:any
+  decimalsToShow:any
+  showInverse:any = 0
+
 
   //checkLoad:any
 
@@ -82,6 +87,8 @@ export class SendPage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.showMoneySend = "0,00"
+    this.showReceiveMoney = "0"
     this.fetchSymbols()
   }
 
@@ -137,6 +144,23 @@ export class SendPage implements OnInit {
         this.presentLoading()
       }
 
+
+      if(window.localStorage.getItem("address_verified") == "true"){
+        this.maxAmount = this.symbols[this.senderCurrency].max_tier_2
+      }else{
+        this.maxAmount =  this.symbols[this.senderCurrency].max_tier_1
+      }
+
+      this.showMoneySend =  this.symbols[this.senderCurrency].default_amount
+      this.showMoneySend = parseFloat(this.showMoneySend).toFixed(2)+""
+
+      this.showMoneySend = this.showMoneySend.replaceAll(".", ",")
+      
+      this.minAmount = this.symbols[this.senderCurrency].minAmount
+
+      this.sendMoney =  parseFloat(this.symbols[this.senderCurrency].default_amount).toFixed(2)
+      this.decimalsToShow = this.symbols[this.senderCurrency].decimals
+      this.showInverse = this.symbols[this.senderCurrency].show_inverse
       
       this.http.get(this.url+`/api/v1/exchange-rate/${this.symbol}`, {headers}).subscribe((res:any) => {
 
@@ -228,53 +252,59 @@ export class SendPage implements OnInit {
   sendedAmountChanged(){
 
     //this.fetchExchangeRate()
-
+    //console.log("money send", this.showMoneySend)
     let newMoney = this.showMoneySend.replaceAll(".", "")
     this.sendMoney = parseFloat(newMoney.replaceAll(",", "."))
     
     this.calculateComission()
-    this.receiveMoney = this.totalToExchange * this.exchangeRate;
-    let receiveMoney = parseFloat(this.receiveMoney).toLocaleString()
-    this.showReceiveMoney = receiveMoney
+
+    if(this.showInverse == 0){
+      this.receiveMoney = this.totalToExchange * this.exchangeRate;
+    }else{
+      this.receiveMoney = 1/(this.totalToExchange * this.exchangeRate);
+    }
+    
+    let receiveMoney = parseFloat(this.receiveMoney).toFixed(this.decimalsToShow)
+    this.showReceiveMoney = this.number_format(receiveMoney, this.decimalsToShow, ",", ".")
+
+    //console.log("receiveMoney", )
+
 
   }
-
-  /*receivedAmountChanged(){
-    
-    let toReceive = parseFloat(this.sendMoney);
-    const factor = this.exchangeRate *  (1 - (this.params.transactionCostPct/100 + this.priorities[this.priority].costPct/100) * (1 + this.params.taxPct/100));
-    let toSend = toReceive / factor;
-    this.receiveMoney = toSend;
-    
-    this.calculateComission()
-
-    console.log(this.sendMoney, this.exchangeRate, this.params, this.priorities[this.priority], factor, this.receiveMoney)
-
-  }*/
 
   async presentAlertConfirm() {
 
     if(this.receiveMoney > 0){
       
-      const alert = await this.alertController.create({
-        message: '<h3 class="iont-text-center">¿Estás seguro de enviar?<h3>',
-        cssClass: 'alert-custom',
-        buttons: [
-          {
-            text: 'No',
-            role: 'cancel',
-            cssClass: 'secondary'
-          }, {
-            text: 'Sí, enviar',
-            cssClass: 'primary',
-            handler: () => {
-              this.store()
+      if(this.sendMoney < this.minAmount){
+        this.presentAlert("Monto a enviar debe ser mayor a "+this.minAmount)
+      }
+
+      else if(this.sendMoney > this.maxAmount){
+        this.presentAlert("Monto a enviar debe ser menor a "+this.maxAmount)
+      }
+
+      else{
+        const alert = await this.alertController.create({
+          message: '<h3 class="iont-text-center">¿Estás seguro de enviar?<h3>',
+          cssClass: 'alert-custom',
+          buttons: [
+            {
+              text: 'No',
+              role: 'cancel',
+              cssClass: 'secondary'
+            }, {
+              text: 'Sí, enviar',
+              cssClass: 'primary',
+              handler: () => {
+                this.store()
+              }
             }
-          }
-        ]
-      });
-  
-      await alert.present();
+          ]
+        });
+    
+        await alert.present();
+      }
 
     }else{
       this.presentAlert("El monto a recibir debe ser mayor a 0")
@@ -295,7 +325,7 @@ export class SendPage implements OnInit {
 
     this.senderCurrency = 0
     this.receiverCurrency = null
-    this.priority = ""
+    this.priority = 0
     this.sendMoney = 0
     this.receiveMoney = 0
     this.exchangeRate = null
@@ -343,6 +373,36 @@ export class SendPage implements OnInit {
     })
 
   }
+
+  number_format(number, decimals, dec_point, thousands_point) {
+
+    if (number == null || !isFinite(number)) {
+        throw new TypeError("number is not valid");
+    }
+
+    if (!decimals) {
+        var len = number.toString().split('.').length;
+        decimals = len > 1 ? len : 0;
+    }
+
+    if (!dec_point) {
+        dec_point = '.';
+    }
+
+    if (!thousands_point) {
+        thousands_point = ',';
+    }
+
+    number = parseFloat(number).toFixed(decimals);
+
+    number = number.replace(".", dec_point);
+
+    var splitNum = number.split(dec_point);
+    splitNum[0] = splitNum[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_point);
+    number = splitNum.join(dec_point);
+
+    return number;
+}
 
 
 }

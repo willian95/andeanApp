@@ -5,8 +5,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { UrlService } from '../../../services/url.service';
 import { ErrorExtractorService } from '../../../services/error-extractor.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { Base64 } from '@ionic-native/base64/ngx';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-address',
@@ -25,8 +23,9 @@ export class AddressPage implements OnInit {
   address:any
   address_ext:any
   loading:any
+  showImage:any = null
 
-  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, private camera: Camera, private base64: Base64, private domSanitizer:DomSanitizer) {
+  constructor(private router: Router, private http: HttpClient, private urlService: UrlService,private errorExtractService: ErrorExtractorService, public loadingController: LoadingController, public alertController: AlertController, public actionSheetController: ActionSheetController, public toastController: ToastController, private camera: Camera) {
 
     this.url = urlService.getUrl()
 
@@ -46,7 +45,7 @@ export class AddressPage implements OnInit {
     })
   }
 
-  async presentActionSheet(imageType) {
+  async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Opciones',
       buttons: [
@@ -115,29 +114,19 @@ export class AddressPage implements OnInit {
 
     var options = {
       quality: 40,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth:720
     }
-
-    var _this = this
 
     this.camera.getPicture(options).then((imageData) => {
 
-      _this.base64.encodeFile(imageData).then((base64File: string) => {
-        console.log(base64File);
-
-          _this.image = _this.domSanitizer.bypassSecurityTrustResourceUrl(base64File)
-  
-    
-
-      }, (err) => {
-        console.log(err);
-      });
+      this.image = 'data:image/jpeg;base64,' + imageData;
   
     
     }, (err) => {
-      console.log(err)
+      //console.log(err)
     });
   }
 

@@ -36,7 +36,7 @@ export class TabsPage implements OnInit {
 
       if(this.addressCheckDone == true && this.identityCheckDone == true && this.verifyCheckDone == true){
         this.load = true
-        console.log("interval", this.addressData, this.identityData)
+       
         clearInterval(checkLoad);
       }
 
@@ -58,11 +58,14 @@ export class TabsPage implements OnInit {
 
     this.http.get(this.url+"/api/v1/user/address", {headers})
     .subscribe((response: any) => {
-      console.log("addres", response)
+      //console.log("addres", response)
       
       if(response.data != null){
         this.addressData = response.data
-        console.log("addressData", this.addressData)
+        if(this.addressData.verified == true){
+          window.localStorage.setItem("address_verified", "true")
+        }
+        
       }
       this.addressCheckDone = true
       
@@ -79,9 +82,14 @@ export class TabsPage implements OnInit {
     this.http.get(this.url+"/api/v1/user/identity", {headers})
     .subscribe((response: any) => {
       
-      console.log("identit", response)
-      if(response != null){
+     
+      if(response.data != null){
+        
         this.identityData = response.data
+     
+        if(this.identityData.verified == true){
+          window.localStorage.setItem("identity_verified", "true")
+        }
       }
       this.identityCheckDone = true
       

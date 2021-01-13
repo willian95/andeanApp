@@ -6,6 +6,13 @@
     <ion-button color="success" (click)="createRecipients()">crear</ion-button>
   </p>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="fetchRecipients()">
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
   <p class="ion-text-center" *ngIf="recipients.length <= 0">
     <img src="assets/users.jpg" alt="" style="width: 70%;">
   </p>
@@ -21,6 +28,7 @@
   </ion-item>
 
   <ion-list *ngIf="recipients.length > 0">
+    
     <ion-item lines="none" *ngFor="let recipient of recipients;">
       <ion-card>
         <ion-item color="success">

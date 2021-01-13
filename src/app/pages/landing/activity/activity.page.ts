@@ -60,7 +60,7 @@ export class ActivityPage implements OnInit {
     .subscribe((response: any) => {
 
       this.identityData = response.data
-      console.log("test-identity",this.identityData)
+      //console.log("test-identity",this.identityData)
     })
 
   }
@@ -90,7 +90,7 @@ export class ActivityPage implements OnInit {
     .subscribe((response: any) => {
 
       this.addressData = response.data
-      console.log("test-address",this.addressData)
+      //console.log("test-address",this.addressData)
     })
 
   }

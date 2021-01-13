@@ -64,7 +64,7 @@ export class CreatePaymentsPage implements OnInit {
 
     this.http.get(this.url+"/api/v1/orders/"+localStorage.getItem("andean_order_id"), {headers}).subscribe((res:any) => {
 
-      console.log("test-order", res)
+      //console.log("test-order", res)
       this.order = res.data
 
     })
@@ -79,7 +79,7 @@ export class CreatePaymentsPage implements OnInit {
 
     this.http.get(this.url+"/api/v1/accounts/"+localStorage.getItem("andean_account_id"), {headers}).subscribe((res:any) => {
 
-      console.log("test-account", res)
+      //console.log("test-account", res)
       this.account = res.data
     })
 

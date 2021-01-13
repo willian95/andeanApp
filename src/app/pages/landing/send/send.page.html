@@ -46,7 +46,8 @@
             </ion-item>
             <p>Comision: {{ total }} <span *ngIf="total > 0">{{ symbols[senderCurrency].base.symbol }}</span></p>
             <p>Monto a convertir: {{ totalToExchange }} <span *ngIf="total > 0">{{ symbols[senderCurrency].base.symbol }}</span></p>
-            <p>Tipo de cambio: 1 = 0</p>
+            <p *ngIf="showInverse == 0">Tipo de cambio: 1 = {{ exchangeRate }}</p>
+            <p *ngIf="showInverse == 1">Tipo de cambio: {{ exchangeRate }} = 1</p>
           </ion-card-content>
         </ion-col>
       </ion-row>

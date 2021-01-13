@@ -24,7 +24,7 @@
 
   <ion-item>
     <ion-label position="floating">Cantidad</ion-label>
-    <ion-input type="number" [(ngModel)]="payment_amount"></ion-input>
+    <ion-input type="tel" [(ngModel)]="show_payment_amount" (ionChange)="changeAmount()" [brmasker]="{money: true, decimalCaracter:',', thousand: '.'}"></ion-input>
   </ion-item>
 
   <ion-item>
